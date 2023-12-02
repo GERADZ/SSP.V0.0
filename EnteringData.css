@@ -1,0 +1,1507 @@
+*{
+    margin: 0;
+     padding: 0; 
+     box-sizing: border-box; 
+     text-decoration: none; 
+     border: none; 
+     outline: none; 
+     scroll-behavior: smooth; 
+     font-family: 'Poppins' , sans-serif;
+}
+:root{
+    --bg-color:#1f242d;
+    --second-bg-color:#323946;
+    --text-color:#fff;
+    --main-color:#0ef;
+
+
+    --bg-color-disable:#1f242d78;
+    --second-bg-color-disable:#32394673;
+    --text-color-disable:#ffffff63;
+    --main-color-disable:rgba(0, 238, 255, 0.585);
+
+}
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+body{
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+section{
+    min-height: 100vh;
+    padding: 10rem 9% 2rem;
+}
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 9%;
+    background: var(--bg-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+.header.sticky{
+    border-bottom: .1rem solid rgba(0, 0, 0, 2);
+}
+.logo{
+    font-size: 2.5rem;
+    color: var(--text-color);
+    font-weight: 600;
+    cursor: default;
+    transition: .5s;
+}
+.logo:hover{
+    color: var(--main-color);
+    
+}
+.navbar a{
+font-size: 1.7rem;
+color: var(--text-color);
+margin-left: 4rem;
+transition: .3s;
+}
+.navbar a:hover,
+.navbar a.active{
+    color: var(--main-color);
+} 
+
+#menu-icon{
+     font-size: 3.6rem;
+     color: var(--text-color);
+     display: none;
+}
+
+
+@media (max-width:1400px){
+    #menu-icon{
+        display: block;
+    }
+    .navbar{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 1rem 3%;
+        background: var(--bg-color);
+        border-top: .1rem solid rgba(0, 0, 0, 2);
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 2);
+        display: none;
+        height: 50vh;
+        overflow-x: hidden;
+        scroll-behavior: auto;
+        direction: rtl;
+    }
+    .navbar.active {
+        display: block;
+
+    }
+
+  
+
+    .navbar a {
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+    }
+}
+
+
+/*-------------------------------------------error page-------------------------*/
+
+.message-not-available{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+/*-------------------------------------------span-------------------------*/
+
+span{
+    color: var(--main-color);
+}
+span-red{
+    color: rgb(255, 128, 128);
+
+}
+
+/*-------------------------------------------btns-------------------------*/
+
+.btn {
+    display: inline-block;
+    padding: 2rem 2.8rem;
+    background: var(--main-color);
+    border-radius: 4rem;
+    box-shadow: 0 0 1rem var(--text-color);
+    font-size: 1.6rem;
+    color: var(--second-bg-color);
+    letter-spacing: .1rem;
+    font-weight: 600;
+    transition: .5s ease;
+    margin-top: 4rem;
+
+}
+.btn:hover{
+    box-shadow: none;
+}
+
+
+
+.btn_edit {
+    display: inline-block;
+    padding: 2rem 2.8rem;
+    background: #fca820;
+    border-radius: 4rem;
+    box-shadow: 0 0 1rem #fec66d;
+    font-size: 1.6rem;
+    color: var(--second-bg-color);
+    letter-spacing: .1rem;
+    font-weight: 600;
+    transition: .5s ease;
+    margin-top: 4rem;
+
+}
+.btn_edit:hover{
+    box-shadow: none;
+}
+
+
+.btn_delet {
+    display: inline-block;
+    padding: 2rem 2.8rem;
+    background: #fc2720e1;
+    border-radius: 4rem;
+    box-shadow: 0 0 1rem #ff9693;
+    font-size: 1.6rem;
+    color: var(--text-color);
+    letter-spacing: .1rem;
+    font-weight: 600;
+    transition: .5s ease;
+    margin-top: 4rem;
+
+}
+.btn_delet:hover{
+    box-shadow: none;
+}
+.btn_delet i{
+    font-size: 30px;
+}
+
+
+
+/*--------------------servises ---------------------------*/
+
+.EnteringData_title{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+.EnteringData_title i {
+    font-size: 6rem;
+    color: var(--main-color);
+}
+.EnteringData_title h2 {
+    font-size: 6rem;
+}
+
+
+.services h2{
+    margin-bottom: 5rem;
+}
+
+
+.services-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+
+}
+.services-container .services-box {
+    flex: 1 1 30rem;
+    background: var(--second-bg-color);
+    padding: 3rem 2rem;
+    border-radius: 2rem;
+    text-align: center;
+    border: .2rem solid var(--bg-color);
+    transition: .5s ease;
+}
+.services-container .services-box:hover{
+    border-color:var(--main-color) ;
+    transform: scale(1.02);
+}
+
+.services-box a:hover{
+    transition: .5s ease;
+}
+.services-box a:hover{
+    border-bottom: 1px solid var(--main-color);
+}
+
+.services-box i {
+    font-size: 6rem;
+    color: var(--main-color);
+}
+
+.services-box h3{
+    font-size: 1.7rem;
+    margin: 1rem 0 3rem;
+}
+
+.services-box p {
+    font-size: 1.2rem;
+    margin: 1rem 0 3rem;
+}
+/*-------------------- </ srev ------------------------------*/
+
+/*-------------------------------------------select ---------------------------*/
+
+/* Style de base pour la boîte de sélection */
+select {
+  width: 200px; /* Largeur de la boîte de sélection */
+  padding: 10px; /* Espace à l'intérieur de la boîte de sélection */
+  border: 1px solid var(--second-bg-color); /* Bordure légère */
+  border-radius: 5px; /* Coins arrondis */
+  font-size: 16px; /* Taille de la police */
+  background: var(--bg-color);
+  box-shadow: 0 0 .7rem var(--main-color);
+  color: white;
+  transition: .5s;
+  margin: 3px;
+
+}
+
+/* Style pour les options de la boîte de sélection */
+option {
+  font-size: 16px; /* Taille de la police */
+  color: white;
+}
+
+/* Style pour la boîte de sélection lorsque survolée */
+select:hover {
+  border-color: var(--main-color);
+  box-shadow: 0 0 2rem var(--main-color);
+}
+
+/* Style pour la boîte de sélection lorsqu'elle est focus */
+select:focus {
+  border-color: #007bff; /* Changement de couleur de la bordure lorsqu'elle est focus */
+  outline: none; /* Suppression de l'effet de surlignement par défaut */
+}
+
+/* Style pour les options de la boîte de sélection lorsqu'elles sont survolées */
+option:hover {
+  background-color: var(--main-color); /* Changement de couleur de fond au survol */
+}
+
+
+.selceterro {
+    display: none;
+    color: rgb(255, 128, 128);
+    transition: 0.8s;
+    margin-bottom: 5px
+}
+.successfully {
+    display: none;
+    color: rgb(113, 255, 116);
+    transition: 0.8s;
+    margin-bottom: 5px
+
+}
+
+.projectcancelled{
+    display: none;
+    color: rgb(255, 128, 128);
+    transition: 0.8s;
+    margin: 20px 0;
+}
+
+/*-------------------------------------------select ---------------------------*/
+#enterData{
+    display: none;
+}
+
+
+
+
+
+/*-------------------------------------------spinner ---------------------------*/
+
+.spinner {
+    display: none;
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-top: 4px solid var(--main-color);
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: spin 1s linear infinite;
+    margin: 10px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/*-------------------------------------------spinner ---------------------------*/
+
+
+
+
+
+
+
+
+
+/*-------------------------------------------enter data ---------------------------*/
+.EnterDataBox{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.wapper{
+    position: relative;
+    width: 1000px;
+    height: 450px;
+    background-color: var(--second-bg-color);
+    border: 2px solid var(--main-color);
+    overflow: hidden;
+    box-shadow: 0 0 25px #0ef;
+    transition :.5s;
+    display: flex;
+    flex-direction: row;
+}
+/*----------from box items ---------------*/
+
+.wapper .form-box.site1database1{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background:  transparent;
+    flex-direction: row;
+    
+}
+.wapper .form-box.site1database2{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background:  transparent;
+    flex-direction: row;
+    
+}
+.wapper .form-box.site2database1{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background:  transparent;
+    flex-direction: row;
+    
+}
+.wapper .form-box.site2database2{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background:  transparent;
+    flex-direction: row;
+    
+}
+.wapper .form-box.x{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background:  transparent;
+    flex-direction: row;
+    
+ }
+/*--------from box items --------------*/
+
+/*-------------------------------------------animation     form---------------------------*/
+
+.wapper .form-box.site1database1{
+    left:0;
+ }
+ .wapper .form-box.site1database2{
+    left:1000px;
+ }
+ .wapper .form-box.site2database1{
+    left:2000px;
+ }
+ .wapper .form-box.site2database2{
+    left:3000px;
+ }
+ .wapper .form-box.x{
+    left:4000px;
+    
+ }
+
+
+
+
+.wapper .form-box.site1database1 .animation {
+    left:0px;
+    opacity: 1;
+    filter: blur(0);
+    transition: 2s ease;
+    transition-delay: calc(.2s *var(--j) );
+}
+.wapper .form-box.site1database2 .animation {
+    left:0px;
+    opacity: 0;
+    filter: blur(10);
+    transition: 2s ease;
+    transition-delay: calc(.2s *var(--j) );
+}
+.wapper .form-box.site2database1 .animation {
+    left:0px;
+    opacity: 0;
+    filter: blur(10);
+    transition: 2s ease;
+    transition-delay: calc(.2s *var(--j) );
+}
+.wapper .form-box.site2database2 .animation {
+    left:0px;
+    opacity: 0;
+    filter: blur(10);
+    transition: 2s ease;
+    transition-delay: calc(.2s *var(--j) );
+}
+.wapper .form-box.x .animation {
+    left:0px;
+    opacity: 1;
+    filter: blur(0);
+    transition: 2s ease;
+    transition-delay: calc(.2s *var(--j) );
+}
+/*--------active --------------*/
+
+.wapper.active .form-box.site1database1 .animation {
+    transform: translateX(0);
+    opacity: 0;
+    filter: blur(10px);
+    transition-delay: calc(.2s *var(--i) );
+}
+.wapper.active .form-box.site1database2 .animation {
+    transform: translateX(-1000px);
+    opacity: 1;
+    filter: blur(0px);
+    transition-delay: calc(.2s *var(--i) );
+}
+.wapper.active .form-box.site2database1 .animation {
+    transform: translateX(-1000px);
+    opacity: 0;
+    filter: blur(10px);
+    transition-delay: calc(.2s *var(--i) );
+}
+/*--------active1 --------------*/
+.wapper.active1 .form-box.site1database1 .animation {
+    transform: translateX(0);
+    opacity: 0;
+    filter: blur(10px);
+    transition-delay: calc(.2s *var(--i) );
+}
+.wapper.active1 .form-box.site1database2 .animation {
+    transform: translateX(-1000px);
+    opacity: 0;
+    filter: blur(10px);
+    transition-delay: calc(.2s *var(--i) );
+}
+.wapper.active1 .form-box.site2database1 .animation {
+    transform: translateX(-2000px);
+    opacity: 1;
+    filter: blur(0px);
+    transition-delay: calc(.2s *var(--i) );
+}
+.wapper.active1 .form-box.site2database2 .animation {
+    transform: translateX(-2000px);
+    opacity: 0;
+    filter: blur(10px);
+    transition-delay: calc(.2s *var(--i) );
+}
+
+
+/*--------active2 --------------*/
+.wapper.active2 .form-box.site1database1 .animation {
+    transform: translateX(0);
+    opacity: 0;
+    filter: blur(10px);
+    transition-delay: calc(.2s *var(--i) );
+}
+.wapper.active2 .form-box.site1database2 .animation {
+    transform: translateX(-1000px);
+    opacity: 0;
+    filter: blur(10px);
+    transition-delay: calc(.2s *var(--i) );
+}
+.wapper.active2 .form-box.site2database1 .animation {
+    transform: translateX(-2000px);
+    opacity: 0;
+    filter: blur(10px);
+    transition-delay: calc(.2s *var(--i) );
+}
+.wapper.active2 .form-box.site2database2 .animation {
+    transform: translateX(-3000px);
+    opacity: 1;
+    filter: blur(0px);
+    transition-delay: calc(.2s *var(--i) );
+}
+
+
+/*--------active3 --------------*/
+.wapper.active3 .form-box.site1database1 .animation {
+    opacity: 0;
+    filter: blur(10px);
+    transition-delay: calc(.2s *var(--i) );
+}
+.wapper.active3 .form-box.site1database2 .animation {
+    transform: translateX(-2000px);
+    opacity: 0;
+    filter: blur(10px);
+    transition-delay: calc(.2s *var(--i) );
+}
+.wapper.active3 .form-box.site2database2 .animation {
+    transform: translateX(-3000px);
+    opacity: 0;
+    filter: blur(10px);
+    transition-delay: calc(.2s *var(--i) );
+}
+.wapper.active3 .form-box.site2database1 .animation {
+    transform: translateX(-2000px);
+    opacity: 0;
+    filter: blur(10px);
+    transition-delay: calc(.2s *var(--i) );
+}
+.wapper.active3 .form-box.x .animation {
+    transform: translateX(-4000px);
+    opacity: 1;
+    filter: blur(0px);
+    transition-delay: calc(.2s *var(--i) );
+}
+/*-------------------------------------------</animation     form---------------------------*/
+
+
+
+
+
+
+
+
+.wapper .form-box .infodata_site_options{
+    width: 25%;
+    overflow: auto;
+}
+
+.wapper .form-box .infodata{
+    width: 25%;
+}
+.wapper .form-box .contentDataJan-juin{
+    width: 25%;
+}
+.wapper .form-box .contentDatajuil-dec{
+    width: 25%;
+}
+.wapper .form-box .nextButton{
+    width: 25%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.wapper .form-box .mapSelect{
+    width: 75%;
+    height: 100%;
+}
+
+
+
+
+/*-------------------------------------------form---------------------------*/
+
+
+
+.form-box h2{
+    font-size: 32px;
+    color: white;
+    text-align: center;
+}
+.form-box .input-box{
+    position: relative;
+    height: 50px;
+    margin: 20px;
+}
+
+.input-box input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: #fff;
+    padding-right: 23px;
+    font-weight: 500;
+    border-bottom: solid  2px #fff;
+
+}
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: white;
+    pointer-events: none;
+    transition: .5s;
+}
+
+input:focus~label,
+input:valid~label{
+    top: -5px;
+    color: #0ef;
+    
+}
+
+input:focus,
+input:valid{
+    border-bottom:solid 3px #0ef;
+    
+}
+.input-box i{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform:translateY(-50%);
+    font-size: 18px;
+    color: #fff;
+    transition: .5s;  
+}
+input:focus~i,
+input:valid~i{
+     color: #0ef;
+}
+
+
+
+/*-------------------------------------------</form---------------------------*/
+
+
+/*-------------------------------------------enter data ---------------------------*/
+
+
+/*-------------------------------------------scroll-Bare-------------------------*/
+
+
+.scrol_row_bg .scrol_row{
+    min-width: 80vw;
+}
+::-webkit-scrollbar{
+    width: 1rem;
+}
+::-webkit-scrollbar-track{
+    background-color: var(--second-bg-color);
+}
+::-webkit-scrollbar-thumb{
+    background-color: var(--bg-color);
+    border-radius: 4rem;
+}
+::-webkit-scrollbar-thumb:hover{
+    background-color: var(--main-color);
+    
+}
+/*-------------------------------------------scroll-Bare-------------------------*/
+
+/*-------------------------------------------table-------------------------*/
+
+/* Style the table container */
+.table-container {
+    max-width: 100%;
+    overflow-x: auto;
+     /* Add horizontal scrolling for wide tables */
+}
+
+/* Style the table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-bottom: 20px;
+    box-shadow: 0 0 25px #0ef;
+     /* Add spacing between tables if needed */
+}
+
+/* Style table headers */
+th {
+    background-color: #000000;
+    font-weight: bold;
+    text-align: left;
+    padding: 10px;
+    font-size: 13px;
+    border: 1px solid var(--main-color);
+
+}
+
+/* Style table rows */
+tr:nth-child(even) {
+    background-color: var(--second-bg-color);
+}
+
+tr:nth-child(odd) {
+    background-color: var(--bg-color);
+}
+
+/* Style table cells (data) */
+td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    font-size: 13px;
+
+}
+
+/*-------------------------------------------</table-------------------------*/
+/*-------------------------------------------<graph 1-------------------------*/
+
+.graphone{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    background: var(--second-bg-color);
+}
+.graphone h2{
+    margin-bottom: 5rem;
+}
+
+/* Style the container for the chart */
+.background-graphone{
+    width: 100%; /* Adjust the maximum width as needed */
+    height: 100%;
+    margin: 5px auto;
+    padding: 20px;
+    background-color: var(--bg-color);
+    border: 1px solid var(--main-color);
+    border-radius: 5px;
+    box-shadow: 0 0 25px var(--main-color);
+    justify-content: center;
+    align-items: center;
+}
+
+/* Style the canvas element that holds the chart */
+.chart-canvas {
+    width: 100%;
+    height: 100%;
+}
+.myChart{
+    height: 50vh;
+    width: 50vh;
+}
+/* Style the legend (labels) of the chart */
+.chart-legend {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.chart-legend-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.chart-legend-color {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+
+/*-----------------------------SECTION  siable / enable ----------------------*/
+
+.data-Result{display: none;}
+
+
+
+
+
+
+.check_input{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+
+  
+  .input-box .animation .check{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin: 10px 0;
+  }
+  
+  .input-box label {
+    margin-right: 10px;
+  }
+  
+  .input-box input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--text-color);
+    border-radius: 4px;
+  }
+  
+  .input-box input[type="checkbox"]:checked {
+    background-color: var(--main-color);
+  }
+  
+  .input-box input[type="checkbox"]:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(51, 51, 51, 0.5);
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  /*-----------------------------les inputs de projet / 2base 2  site ----------------------*/
+  .inpt1{
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+
+  }
+  .ligne{
+    width: 100%;
+    height: 10px;
+    background: var(--main-color);
+    margin-bottom: 15px;
+}
+  
+.container_de_calcule{
+    display: flex;
+    flex-direction: row;
+
+}
+
+.services-container.inputs_button {
+    width: 20%;
+    height: 100%;
+
+}
+.services-container.inputs_button :hover{
+    border-color:var(--bg-color) ;
+    transform: scale(1);
+    transition: 0.5s;
+    
+}
+.services-container.inputs_showBox {
+    width: 80%;
+    height: 100%;
+    
+}
+.services-container.inputs_showBox :hover{
+    border-color:var(--bg-color) ;
+    transform: scale(1);
+    transition: 0.5s;
+    
+}
+
+.services-box.options{
+    padding: 2rem 0.5rem ; 
+    height: 50vh;
+    overflow-y: scroll;
+    
+}
+
+.options_box{
+    width: 100%;
+    height: 100%;
+    background: var(--bg-color);
+    margin-top: 10px;
+    border-radius: 6px;
+    border: .2rem solid crimson;
+
+}
+
+.options_box.actv{
+    width: 100%;
+    height: 100%;
+    background: var(--bg-color);
+    margin-top: 10px;
+    border-radius: 6px;
+    border: .2rem solid var(--main-color);
+}
+
+.options_box h2{
+    padding:1rem;
+}
+.bg_select_show_site{
+    display: flex;
+    justify-content: left;
+}
+.bg_select_show_database{
+    display: flex;
+    width: 100%;
+    justify-content: left;
+
+
+}
+
+.bg_select_show{
+    padding: 0 0 1rem;
+}
+
+.bg_input_show{
+    pointer-events: none;
+}
+
+.services-box.show{
+    display:flex ;
+    flex-direction: column;
+    height: 80vh;
+    overflow-y: auto; 
+}
+
+.form-box.data_location_inputs{
+    display: flex;
+    flex-direction: row;
+    width: 60vw;
+    height: 100px;   
+    overflow-y: auto; 
+    pointer-events: none;
+
+}
+
+.form-box.data_location_in{
+    display: flex;
+    flex-direction: row;
+    width: 60vw;
+    height: 100px;   
+    overflow-y: auto; 
+    pointer-events: block;
+
+}
+
+.data_location_inputs_name{
+    display: flex;
+    justify-content: left;
+}
+
+.input-box.animation.project_page input{ 
+    width: 53px;
+    font-size: 15px;
+    padding-right: 0;
+}
+.input-box.animation.project_page label{ 
+   font-size: 10px;
+}
+.input-box.animation.project_page{
+    margin: 20px 7px;
+}
+
+/* Hide increment and decrement buttons in number input */
+input[type="number"] {
+    appearance: textfield;
+  }
+  
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 2rem;
+    background: var(--second-bg-color);
+    border-radius: 0.8rem;
+
+}
+.footer-text p{
+    font-size: 1.6rem;
+}
+.footer_next_btn{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: .8rem;
+    background: var(--main-color);
+    border-radius: 0.8rem;
+    transition: .5s ease;
+    margin: 1rem;
+
+}
+.footer_next_btn.enable{
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    padding: .8rem;
+    background: var(--main-color);
+    border-radius: 0.8rem;
+    transition: .5s ease;
+    margin: 1rem;
+}
+
+.footer-iconTop a:hover {
+   box-shadow: 0 0 1rem var(--main-color);
+}
+.footer-iconTop a i {
+    font-size: 3rem;
+    color: var(--second-bg-color);
+}
+
+
+
+
+
+
+
+.footer-iconRet a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: .8rem;
+    background: crimson;
+    border-radius: 0.8rem;
+    transition: .5s ease;
+    margin: 1rem;
+
+}
+.footer-iconRet a:hover {
+   box-shadow: 0 0 1rem rgb(252, 104, 134)
+}
+.footer-iconRet a i {
+    font-size: 3rem;
+    color: var(--text-color);
+}
+
+
+
+
+
+
+
+
+
+
+.data-input_part{
+    width: 30%;
+}
+.result_part{
+    width: 70%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* DASBOARD -------------------------------------------------*/
+
+
+header.active{
+    display: none;
+}
+.services11{
+    display: flex;
+    justify-content: center;
+    align-items: start;
+}
+
+
+.menu_dashbaord_sites_row{
+    display: flex;
+    flex-direction: row;
+
+}
+
+.services-box.fulllScreen {
+    position: fixed;
+    width: 100vw;
+    height: 90vh;
+    top: 0;
+    flex: 1 1 30rem;
+    background: var(--second-bg-color);
+    padding: 4rem 2rem;
+    border-radius: 2rem;
+    text-align: center;
+    border: .2rem solid var(--bg-color);
+    transition: .5s ease;
+    overflow-y: scroll;
+}
+
+
+.services-box.fulllScreen:hover{
+    border-color:var(--bg-color) ;
+    transform: scale(1);
+}
+
+
+ 
+
+
+.options_box_Button{
+    width: 10vw;
+    padding: 6px;
+    background: var(--bg-color);
+    border-radius: 6px;
+    border: .2rem solid var(--second-bg-color);
+    justify-content: center;
+    align-items: center;
+    transition: .6s;
+    
+}
+.options_box_Button:hover{
+    border: .2rem solid var(--main-color);
+}
+.options_box_Button h2{
+font-size: 12px;
+}
+
+
+
+
+
+
+
+.title{
+    color: var(--text-color);
+    margin-top: 3vh;
+    justify-content: left;
+    left: 0;
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.container_de_resul{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+
+}
+
+.services-container.result{
+    position: absolute;
+    top: 0vh;
+    width: 100vw;
+
+}
+.services1.a{
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+.services-box.result{
+    width: 100vw;
+    height: 90vh;
+    display: fixed;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    overflow-y: scroll;
+
+
+}
+.services-box.result:hover{
+    border: .2rem solid var(--bg-color);
+    transform: scale(1);
+}
+
+
+
+
+.box_menu_result {
+
+    display: flex;
+    flex-direction: row;
+    background-color: var(--bg-color) ;
+    text-align: center;
+}
+.services-container.menu_result{
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+}
+.services-box.menu_result{
+    width: 100vh;
+    height: 100%;
+    background: var(--bg-color);
+    display: flex;
+    flex-direction: row;
+}
+.services-box.menu_result:hover{
+    border: .2rem solid var(--bg-color);
+    transform: scale(1);
+}
+
+
+.menu_dashbaord{
+    width: 90vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    overflow-y: auto;
+
+}
+
+.btn_btm{
+    justify-content: center;
+    align-items: center;
+    width: 5vw;
+    margin-inline: 2px;
+    font-size: 10px;
+    color: var(--bg-color);
+    background-color: var(--main-color);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+}
+.btn_btm i{
+
+    color: var(--bg-color);
+    font-size: 15px
+}
+
+
+
+.dash{
+    background: var(--second-bg-color);
+}
+
+
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #1f242dad; /* Adjust the opacity for the desired blur effect */
+    backdrop-filter: blur(10px); /* Adjust the blur amount */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.loading-text {
+    margin: 50px;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+.SSPlogo {
+    width: 10px; /* Ajustez la taille de votre logo selon vos besoins */
+    height: 10px; /* Ajustez la taille de votre logo selon vos besoins */
+    animation: rotateLOGOssp 1s linear infinite; /* Ajustez la durée et le type d'animation selon vos besoins */
+}
+.SSPlogo img{
+    width: 40px;
+}
+
+@keyframes rotateLOGOssp {
+
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+}
+
+.canvas_bg{
+    display: flex;
+    width: 57vw;
+    margin-bottom: 20px;
+}
+.table_bg{
+    display: flex;
+    width: 57vw;
+
+}
+td {
+    font-size: 9px;/* Default font size for table cells */
+     font-weight: 500;  
+}
+
+
+
+
+@media (max-width:800px){
+    html{
+        font-size: 55%;
+    }
+    section{
+        padding: 10rem 3% 2rem;
+
+    }
+    .services{
+        padding-bottom:7rem ;
+    }
+
+    footer{
+        padding: 2rem 3%;
+    }
+
+}
+
+@media (max-width:68px){
+    #menu-icon{
+        display: block;
+    }
+    .navbar{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 1rem 3%;
+        background: var(--bg-color);
+        border-top: .1rem solid rgba(0, 0, 0, 2);
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 2);
+        display: none;
+    }
+    .navbar.active {
+        display: block;
+
+    }
+
+  
+
+    .navbar a {
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+    }
+
+
+}
+
+
+@media (max-width: 450px ) {
+    .html{
+        font-size: 50%;
+    }
+    .contact form .input-box input{
+        width: 100%;
+    }
+    .footer{
+        flex-direction: column-reverse;
+    }
+    .footer p {
+        text-align: center;
+        margin-top: 2rem;
+    }
+ 
+}

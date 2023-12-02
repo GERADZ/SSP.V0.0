@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-compatible"content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entering Data - DB informations</title>
+    
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap">
+
+    <link rel="stylesheet" href="EnteringData.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+</head>
+<body>
+    <header class="header">
+        <a href="index.html" class="logo">SSP</a>
+
+        <h3><strong>Name:</strong> <span id="user-name"></span></h3>
+        <h3><strong>Email:</strong> <span id="user-email"></span></h3>
+
+
+        <h2 class="heading">Save <span>Data</span></h2>
+
+
+
+        <nav class="navbar" id="navbarid">
+
+
+
+        </nav>
+    </header>
+
+
+<div class="datainput" id="datainputID">
+
+
+    <section class="services" id="database_info"> 
+        <div class="EnteringData_title" id="EnteringData_title">
+            <h2> Databases <span>options</span></h2>
+            <i class='bx bxs-data bx-tada' ></i>
+    
+        </div>
+
+           <div class="EnterDataBox">
+              <div class="wapper" id="wapper">
+                <div class="form-box site1database1" >
+                    <div class="infodata">
+                        
+                        <form action="#" id="data-site1-form">
+
+
+                            <div class="input-box animation">
+                                <div class="select" id="delect_Site_for_database">
+
+                                    <select id="mySelect_Site" >
+                                      <option value="option0" disabled selected>select site</option>
+                                      <!-- Ajoutez autant d'options que nécessaire -->
+                                    </select>
+                  
+                                </div>
+                            </div>
+
+                            <div class="input-box animation">
+                                <div class="select" id="select_Database">
+
+                                    <select id="mySelect_Database" disabled>
+                                      <option value="option0" disabled selected>select Database</option>
+                                      <!-- Ajoutez autant d'options que nécessaire -->
+                                    </select>
+                  
+                                </div>
+                            </div>
+
+                            <div class="input-box animation ">
+                                
+                                    <input type="text" required id="P1Ndatabase1" >
+                                    <label id="P1Ndatabase1_1">database Name </label>
+                                    <i class='bx bxs-data'  id="P1Ndatabase1_2"></i>
+                                
+                            </div>
+                            <div class="input-box animation ">
+                                <div class="check_input" id="checkBox_for_Database">
+                                    <p for="humanCheckbox" id="humanCheckbox_input">I already added a Database </p>
+                                    <input type="checkbox" id="humanCheckbox">
+                                </div>
+
+                            </div>
+
+                            <div class="input-box animation ">
+                                <h3 class="projectcancelled" id="projectcancelled" >The project has been cancelled </h3>
+                                <div class="spinner" id="spinner1"></div>
+                            </div>  
+                        </form>
+                    </div>
+
+                    <div class="contentDataJan-juin">
+                        
+                        
+                            <div class="input-box animation">
+                                <input type="number" required id="D1P1january">
+                                <label>January</label>
+                                <i class='bx bxs-data' ></i>
+                            </div>
+                            <div class="input-box animation">
+                                <input type="number" required id="D1P1february" >
+                                <label>February</label>
+                                <i class='bx bxs-data' ></i>
+                            </div>
+                            <div class="input-box animation">
+                                <input type="number" required id="D1P1march" >
+                                <label>March</label>
+                                <i class='bx bxs-data' ></i>
+                            </div>
+                            <div class="input-box animation">
+                                <input type="number" required id="D1P1april" >
+                                <label>April</label>
+                                <i class='bx bxs-data' ></i>
+                            </div>
+                            <div class="input-box animation">
+                                <input type="number" required id="D1P1may" >
+                                <label>May</label>
+                                <i class='bx bxs-data' ></i>
+                            </div>
+                            <div class="input-box animation">
+                                <input type="number" required id="D1P1june" >
+                                <label>June</label>
+                                <i class='bx bxs-data' ></i>
+                            </div>
+                            
+                         
+                    </div>
+                    
+                    <div class="contentDatajuil-dec">
+                        <div class="input-box animation">
+                            <input type="number" required id="D1P1july" >
+                            <label>July</label>
+                            <i class='bx bxs-data' ></i>
+                        </div>
+                        <div class="input-box animation">
+                            <input type="number" required id="D1P1august" >
+                            <label>August</label>
+                            <i class='bx bxs-data' ></i>
+                        </div>
+                        <div class="input-box animation">
+                            <input type="number" required id="D1P1september" >
+                            <label>September</label>
+                            <i class='bx bxs-data' ></i>
+                        </div>
+                        <div class="input-box animation">
+                            <input type="number" required id="D1P1october" >
+                            <label>October</label>
+                            <i class='bx bxs-data' ></i>
+                        </div>
+                        <div class="input-box animation">
+                            <input type="number" required id="D1P1november" >
+                            <label>November</label>
+                            <i class='bx bxs-data' ></i>
+                        </div>
+                        <div class="input-box animation">
+                            <input type="number" required id="D1P1december" >
+                            <label>December</label>
+                            <i class='bx bxs-data' ></i>
+                        </div>
+                    </div>
+
+                    <div class="nextButton animation">
+                        <button class="btn" id="save_Database_info" >Save</button>
+                        <button class="btn_edit" id="edit_Database_info"style="display: none;">Edit</button>
+                        <button class="btn_delet" id="delet_Database_info"style="display: none;"><i class='bx bxs-trash bx-tada' ></i></button>
+                    </div> 
+                </div>
+                
+              </div>
+            </div>
+    
+
+    </section>
+
+    <footer class="footer">
+        <div class="footer-text">
+            <p>Copyright &copy;2023 by GERA .Right Reserved</p>
+        </div>
+        <div class="footer-iconTop">
+            <a href="addDataUser.html">
+                <i class='bx bx-subdirectory-left'></i>
+            </a>
+        </div>
+    </footer>
+    <footer class="footer">
+
+    </footer>
+
+
+</div>
+
+<div class="message-not-available" id="servisError">
+    <div class="services-box">
+       <i class='bx bxs-error bx-tada' ></i>  
+       <h3> Importing Data <span-red>404</span-red></h3>
+       <p> Login failed. Please check your login or check your internet connection and <a href="loginRegister.html"><span>try again.</span></a> </p>
+       <h3> <span-red>Not available !</span-red>  </h3>
+    </div>
+</div>
+
+
+
+
+
+    <script type="module" src="https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/10.4.0/firebase-firestore.js"></script>
+
+    <script type="module" src="addData_BDD.js"></script>
+
+
+
+</body>
+</html>

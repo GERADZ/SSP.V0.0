@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-compatible"content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entering Data</title>
+    
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap">
+
+    <link rel="stylesheet" href="EnteringData.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+</head>
+<body>
+    <header class="header">
+        <a href="index.html" class="logo">SSP</a>
+
+        <h3><strong>Name:</strong> <span id="user-name"></span></h3>
+        <h3><strong>Email:</strong> <span id="user-email"></span></h3>
+
+
+        <h2 class="heading">Create <span>Project</span></h2>
+
+
+
+        <nav class="navbar" id="navbarid">
+
+
+
+        </nav>
+    </header>
+
+
+<div class="datainput" id="datainputID">
+
+    <section class="services1" id="services">
+
+        <div class="EnteringData_title" id="EnteringData_title">
+            <h2 class="heading">Create   <span>project</span></h2>
+            <i class='bx bx-line-chart bx-fade-up' ></i>
+        </div>
+
+
+
+        <div class="services-container" id="seccontainer">
+
+            <div class="services-box">
+                <i class='bx bx-line-chart'></i>
+                <h3>Create project</h3>
+                <p>If you enter your data or import it automatically , creat a project and <span>recive the site report.</span>   </p>
+                
+               <h2 id="selcet_erroText" class="selceterro">Please select an option for both fields.</h2>
+               <h2 id="site_edit" class="successfully">PV project was created successfully ! </h2>
+               <h2 id="data_edit" class="successfully">CSP project successfully !</h2>
+               <div class="spinner"></div>
+
+
+
+
+                <div class="select">
+                    <select id="mySelect4">
+                        <option value="option0" disabled selected> type of project</option>
+                        <option value="option1">(PV)photovoltaic</option>
+                        <option value="option2">(CSP)Concentrating solar Power</option>
+
+    
+                        <!-- Ajoutez autant d'options que nécessaire -->
+                     </select>
+
+
+                </div>
+
+               
+
+
+
+               <button  class="btn"  id="nex">  Next  </button> 
+
+            
+              </div>
+        </div>
+
+
+    </section>
+
+
+    <footer class="footer">
+        <div class="footer-text">
+            <p>Copyright &copy;2023 by GERA .Right Reserved</p>
+        </div>
+        <div class="footer-iconTop">
+            <a href="index.html">
+                <i class='bx bx-subdirectory-left'></i>
+            </a>
+        </div>
+    </footer>
+
+
+
+</div>
+
+<div class="message-not-available" id="servisError">
+    <div class="services-box">
+       <i class='bx bxs-error bx-tada' ></i>  
+       <h3> Importing Data <span-red>404</span-red></h3>
+       <p> Login failed. Please check your login or check your internet connection and <a href="loginRegister.html"><span>try again.</span></a> </p>
+       <h3> <span-red>Not available !</span-red>  </h3>
+    </div>
+</div>
+
+
+
+
+
+    <script type="module" src="https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/10.4.0/firebase-firestore.js"></script>
+
+    <script type="module">
+
+
+        
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js";
+import { getFirestore, setDoc, getDocs, getDoc, doc, collection, addDoc, deleteDoc, updateDoc } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-firestore.js";
+
+// Initialize Firebase (use your own Firebase configuration)
+const firebaseConfig = {
+apiKey: "AIzaSyBgGXJoqe-stLcxVS7uERM6l3SOtu1Ez5Y",
+authDomain: "gera-6e9ee.firebaseapp.com",
+projectId: "gera-6e9ee",
+storageBucket: "gera-6e9ee.appspot.com",
+messagingSenderId: "331888265233",
+appId: "1:331888265233:web:22f3ec6417d6b8ff3a49b0"
+};
+
+
+
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const collectionName = "users"; // Specify the collection name where you want to store user data
+const db = getFirestore(app);
+
+
+let selectedSite1 = [];
+const servisError= document.getElementById("servisError")
+const datainputID= document.getElementById("datainputID")
+
+
+
+
+
+auth.onAuthStateChanged((user) => {
+    if (user) {
+        // User is signed in
+        const userName = user.displayName;
+        const userEmail = user.email; 
+
+        // Display user data on the profile page
+        document.getElementById("user-name").textContent =  userName;
+        document.getElementById("user-email").textContent =   userEmail;
+
+        // Show the services container
+        servisError.style.display ="none";
+        datainputID.style.display="block";
+
+        
+    } else {
+
+        // Display user data on the profile page
+        document.getElementById("user-name").textContent =  "ERROR";
+        document.getElementById("user-email").textContent =   "ERROR";
+
+        // User is not signed in, hide the services container
+        datainputID.style.display = "none";
+        servisError.style.display="block";
+    }
+});
+
+        document.addEventListener("DOMContentLoaded", function () {
+    const nex = document.getElementById("nex");
+    if (nex) {
+        nex.onclick = function () {
+            var selectedValue = document.getElementById("mySelect4").value;
+
+            if (selectedValue === "option0") {
+                selcet_erroText.style.display = "block";
+                setTimeout(() => {
+                    selcet_erroText.style.display = "none";
+                }, 3000);
+            }
+            if (selectedValue === "option1") {
+                site_edit.style.display = "block";
+                setTimeout(() => {
+                    site_edit.style.display = "none";
+                }, 2000);
+                setTimeout(() => {
+                    window.location.replace("PV_Project.html");
+                }, 2200);
+            }
+            if (selectedValue === "option2") {
+                data_edit.style.display = "block";
+                setTimeout(() => {
+                    data_edit.style.display = "none";
+                }, 2000);
+                setTimeout(() => {
+                    window.location.replace("PV_Project.html");
+                }, 2200);
+            }
+        };
+    }
+});
+
+    </script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-compatible"content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entering Data</title>
+    
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap">
+
+    <link rel="stylesheet" href="EnteringData.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+</head>
+<body>
+    <header class="header">
+        <a href="index.html" class="logo">SSP</a>
+
+        <h3><strong>Name:</strong> <span id="user-name"></span></h3>
+        <h3><strong>Email:</strong> <span id="user-email"></span></h3>
+
+
+        <h2 class="heading">Save <span>Data</span></h2>
+
+
+
+        <nav class="navbar" id="navbarid">
+
+
+
+        </nav>
+    </header>
+
+
+<div class="datainput" id="datainputID">
+
+    <section class="services1" id="services">
+
+        <div class="EnteringData_title" id="EnteringData_title">
+            <h2 class="heading">Saved  <span>Data</span></h2>
+            <i class='bx bxs-download bx-fade-up' ></i>
+        </div>
+
+        <div class="services-container" id="seccontainer">
+
+            <div class="services-box">
+                <i class='bx bx-cloud-download' ></i>
+               <h3>Save Data</h3>
+               <p> This feature allows you to save data for later  <span>Use</span></p>
+                              
+               <h2 id="selcet_erroText" class="selceterro">Please select an option for both fields.</h2>
+               <h2 id="site_edit" class="successfully">The location option was opened successfully ! </h2>
+               <h2 id="data_edit" class="successfully">The Data-Base option was opened successfully !</h2>
+               <div class="spinner"></div>
+
+
+
+
+                <div class="select">
+
+                  <select id="mySelect">
+                    <option value="option0" disabled selected>select</option>
+                    <option value="option1">location options</option>
+                    <option value="option2">Data-Base options </option>
+
+                    <!-- Ajoutez autant d'options que nécessaire -->
+                    </select>
+
+                </div>
+               
+
+
+
+               <button  class="btn"  id="next_SaveData">  Next  </button> 
+
+            
+              </div>
+        </div>
+
+
+    </section>
+
+
+    <footer class="footer">
+        <div class="footer-text">
+            <p>Copyright &copy;2023 by GERA .Right Reserved</p>
+        </div>
+        <div class="footer-iconTop">
+            <a href="index.html">
+                <i class='bx bx-subdirectory-left'></i>
+            </a>
+        </div>
+    </footer>
+    <footer class="footer">
+
+    </footer>
+
+
+</div>
+
+<div class="message-not-available" id="servisError">
+    <div class="services-box">
+       <i class='bx bxs-error bx-tada' ></i>  
+       <h3> Importing Data <span-red>404</span-red></h3>
+       <p> Login failed. Please check your login or check your internet connection and <a href="loginRegister.html"><span>try again.</span></a> </p>
+       <h3> <span-red>Not available !</span-red>  </h3>
+    </div>
+</div>
+
+
+
+
+
+    <script type="module" src="https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/10.4.0/firebase-firestore.js"></script>
+
+    <script type="module" src="addDataUser.js"></script>
+
+
+
+</body>
+</html>

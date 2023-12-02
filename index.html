@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-compatible"content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSP</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo">SSP</a>
+
+        <i class='bx bx-menu-alt-left' id="menu-icon"></i> 
+
+        <nav class="navbar" id="navbarid">
+            <a href="#home"class="active">Home</a>
+            <a href="#account">My account</a>
+            <a href="#services">Services</a>
+            <a href="#myProjects">My Projects</a>
+
+            <a href="#about">About</a>
+            <a href="#contact">Contact us </a>
+
+        </nav>
+    </header>
+
+    <section class="home" id="home">
+        <div class="home-content">
+            <h3>Hello, Wellcome to </h3>
+            <h1>SSP</h1>
+            <h3>SUN SELECT PRO <span class="multiple-text"></span></h3>
+            <P>by a Studying Mechanical Engineering with a focus on renewable energies.   <span>University Of Science And Technology Houari Boumediene</span></P>
+            <div class="social-media">
+                <a id="facebookButton"><i class='bx bxl-facebook'></i></a>
+                <a id="instaButton"><i class='bx bxl-instagram-alt' ></i></a>
+                <a id="linkdButton"><i class='bx bxl-linkedin' ></i></a>
+                <a id="tweetButton"><i class='bx bxl-twitter' ></i></a>
+            </div>
+            <a href="#services" class="btn"> START </a>
+        </div>
+
+        <div class="home_photo">
+            <div class="logo_D">
+                <img src="image/logo_S_D.png"  alt="">
+            </div>
+            <div class="logo_P">
+                <img src="image/logo_P.png" alt="">
+
+            </div>
+            <div class="logo_G">
+                <img src="image/logo_S_G.png"  alt="">
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="account" id="account">
+        <div>
+            <h2 class="heading">My <span>account</span></h2>
+        </div>
+        <div class="message-not-available" id="message-not-available">
+            <div class="services-box">
+               <i class='bx bxs-error bx-tada' ></i>  
+               <h3> Importing Data <span-red>404</span-red></h3>
+               <p> Login failed. Please check your login or check your internet connection and <a href="loginRegister.html"><span>try again.</span></a> </p>
+               <h3> <span-red>Not available !</span-red>  </h3>
+            </div>
+        </div>
+
+        <div class="account-bg" id="accountINFO">
+            <div class="account-container">
+                <div class="account-box">
+                   <i class='bx bx-user' ></i>   
+                        <div id="user-info">
+                             <h3><strong>Name:</strong> <span id="user-name"></span></h3>
+                             <h3><strong>Email:</strong> <span id="user-email"></span></h3>
+                         </div>
+                </div>
+                <button class="account-box" id="logout-button">
+                    <i class='bx bx-log-out bx-tada bx-flip-horizontal' ></i>
+                </button>
+
+                <a href="payment_Page.html" class="account-box">
+                        <i class='bx bx-cog bx-spin' ></i>
+                </a>
+                   
+                
+
+            </div>
+
+
+        </div>
+
+    </section>
+ 
+
+
+    <section class="services" id="services">
+        <h2 class="heading">Our <span>Services</span></h2>
+
+
+        <div class="services-container" id="seccontainer">
+
+           <div class="services-box">
+                <i class='bx bxl-internet-explorer' ></i>               
+               <h3> Importing Data </h3>
+               <p> With this feature you can automatically import data from various popular database , such as <span>PVGIS</span> </p>
+               <h3> <span-red>Not available !</span-red>  </h3>
+
+            </div>
+
+           <div class="services-box">
+               <i class='bx bxs-save' ></i>
+               <h3>Saved Data</h3>
+               <p> This feature allows you to save data for later  <span>Use</span></p>
+               <a href="#" class="btn" id="SavedData">  Save Data </a>
+
+            </div>
+
+            <div class="services-box">
+               <i class='bx bx-line-chart'></i>
+               <h3>Create project</h3>
+               <p>If you enter your data or import it automatically , creat a project and <span>recive the site report.</span>   </p>
+               <a href="#" class="btn" id="CreateProject">  Next </a> 
+
+            </div>
+
+
+
+        </div>
+        
+        <div class="message-not-available" id="servisError">
+            <div class="services-box">
+               <i class='bx bxs-error bx-tada' ></i>  
+               <h3> Importing Data <span-red>404</span-red></h3>
+               <p> Login failed. Please check your login or check your internet connection and <a href="loginRegister.html"><span>try again.</span></a> </p>
+               <h3> <span-red>Not available !</span-red>  </h3>
+            </div>
+        </div>
+   </section>
+
+   <section class="about" id="about">
+    <div>
+        <h2 class="heading">About <span>Us</span></h2>
+    </div>
+
+
+
+    <div class="container">
+        <div class="row">
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="our-team">
+              <div class="picture">
+                <img class="img-fluid"src="image/dj.png" alt=""> 
+
+              </div>
+              <div class="team-content">
+                <h3 class="name">Abdeldjabar bellakhdar </h3>
+                <h4 class="title">Project leader</h4>
+  
+
+              </div>
+              <ul class="social">
+                <li><a href="https://codepen.io/collection/XdWJOQ/" class="fa fa-facebook" aria-hidden="true"></a></li>
+                <li><a href="https://codepen.io/collection/XdWJOQ/" class="fa fa-twitter" aria-hidden="true"></a></li>
+                <li><a href="https://codepen.io/collection/XdWJOQ/" class="fa fa-google-plus" aria-hidden="true"></a></li>
+                <li><a href="https://codepen.io/collection/XdWJOQ/" class="fa fa-linkedin" aria-hidden="true"></a></li>
+              </ul>
+            </div>
+          </div>
+              <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="our-team">
+              <div class="picture">
+                <img class="img-fluid" src="image/hhhhg.png">
+              </div>
+              <div class="team-content">
+                <h3 class="name">Hichem Farsi</h3>
+                <h4 class="title">Project leader</h4>
+
+
+              </div>
+              <ul class="social">
+                <li><a href="https://codepen.io/collection/XdWJOQ/" class="fa fa-facebook" aria-hidden="true"></a></li>
+                <li><a href="https://codepen.io/collection/XdWJOQ/" class="fa fa-twitter" aria-hidden="true"></a></li>
+                <li><a href="https://codepen.io/collection/XdWJOQ/" class="fa fa-google-plus" aria-hidden="true"></a></li>
+                <li><a href="https://codepen.io/collection/XdWJOQ/" class="fa fa-linkedin" aria-hidden="true"></a></li>
+              </ul>
+            </div>
+          </div>
+              <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="our-team">
+              <div class="picture">
+                <img class="img-fluid" src="image/HACH T.png">
+              </div>
+              <div class="team-content">
+                <h3 class="name">Mohamed Elhachemi Laouar</h3>
+                <h4 class="title">Project leader</h4>
+              </div>
+              <ul class="social">
+                <li><a href="https://codepen.io/collection/XdWJOQ/" class="fa fa-facebook" aria-hidden="true"></a></li>
+                <li><a href="https://codepen.io/collection/XdWJOQ/" class="fa fa-twitter" aria-hidden="true"></a></li>
+                <li><a href="https://codepen.io/collection/XdWJOQ/" class="fa fa-google-plus" aria-hidden="true"></a></li>
+                <li><a href="https://codepen.io/collection/XdWJOQ/" class="fa fa-linkedin" aria-hidden="true"></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   </section>
+
+   
+
+<section class="contact" id="contact">
+    <h2 class="heading">Contact <span>Us</span></h2>
+    <form onsubmit="sendEmeil();reset();return false;">
+        <div class="input-box">
+            <input type="text" id="Name" placeholder="Full Name" required>
+            <input type="email" id="email" placeholder="Email Address"required>
+        </div>
+        <div class="input-box">
+            <input type="number" id="mobilenumber" placeholder="Mobile Number"required>
+            <input type="text" id="email-sub" placeholder="Email Subject"required>
+        </div>
+        <textarea name="message" id="message" cols="30" rows="10"placeholder="Your Message"></textarea>
+        <button type="submit" value="Send Message" class="btn" id="SendMessage"> Send Message</button>
+
+    </form >
+
+</section>
+
+<footer class="footer">
+    <div class="footer-text">
+        <p>Copyright &copy;2023 by GERA .Right Reserved</p>
+    </div>
+    <div class="footer-iconTop">
+        <a href="#home">
+            <i class='bx bx-up-arrow-alt'></i>
+        </a>
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    
+    
+    <script type="module"  src="script.js"></script>
+
+    <script>
+
+function sendEmeil(){
+
+} 
+
+
+
+
+
+
+
+    </script>
+    
+
+</body>
+</html>

@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wellcome to SSP</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> 
+    
+
+
+    <link rel="stylesheet" type="text/css" href="loginRegister.css">
+    <!-- Correct the URL for Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap">
+
+
+
+</head>
+<body>
+    <header class="header">
+        <a href="hello.html" class="logo">SSP</a>
+    </header>
+
+
+
+
+    <section class="Login" id="login-bg">
+        <div class="wapper" id="wapper">
+            <span class="bg-animate"style="--i:8,--j:13" ></span>
+            <span class="bg-animate2"style="--i:7,--j:12"></span>
+
+            <div class="form-box login" >
+                <h2 class="animation" style="--i:0;--j:23">Login</h2>
+                <form action="#" id="login-form">
+                    <div class="input-box animation" style="--i:1;--j:22">
+                        <input type="text" required id="login-email">
+                        <label>Email</label>
+                        <i class='bx bxs-user'></i>
+                    </div>
+
+                    <div class="input-box animation"style="--i:2 ;--j:20">
+                        <input type="password" required id="login-password" >
+                        <label>Passeword</label>
+                        <i class='bx bxs-lock-alt'></i>
+                    </div>
+
+                    <button type="submit" class="btn animation"style="--i:3;--j:19">Login</button>
+                    <div class="loger-link animation "style="--i:4;--j:18">
+                        <p>Don't have account ? <a href="#" class="register-link">Sign Up</a></p>
+                    </div>
+                    <div class="d-flex justify-content-center">
+
+                    </div>
+
+                    
+                </form>
+
+            </div>
+
+            <div class="info-text login animation">
+                <h2 class="animation"style="--i:5;--j:17">Wellcome back !</h2>
+                                <!-- Add a spinner container -->
+                                <div class="animation" id="login-spinner" style="display: none;">
+                                    <div class="spinner-border" role="status"></div>
+                                        <h3>Registering...</h3>
+                                    </div>
+                             <!-- Display success or error messages -->
+                            <div class="animation" id="login-message" style="display: none;"></div>
+
+            </div>
+
+            <div class="info-text register animation">
+                <h2 class="animation" style="--i:25;--j:2">Wellcome !</h2>                
+                <!-- Add a spinner container -->
+                <div class="animation" id="register-spinner" style="display: none;">
+                        <div class="spinner-border" role="status"></div>
+                            <h3>Registering...</h3>
+                        </div>
+                 <!-- Display success or error messages -->
+                <div class="animation" id="register-message" style="display: none;"></div>
+
+            </div>
+            <div class="form-box register">
+                <h2 class="animation"style="--i:17;--j:8">Register !</h2>
+                <form action="#" id="register-form">
+                    <div class="input-box animation"style="--i:18;--j:7">
+                        <input type="text" id="register-name" placeholder="Full Name" required>
+                        <label>Username</label>
+                        <i class='bx bxs-user'></i>
+                    </div>
+
+                    <div class="input-box animation"style="--i:19;--j:6">
+                        <input type="email" id="register-email" placeholder="Email" required>
+                        <label>Email</label>
+                        <i class='bx bxs-envelope'></i>
+                    </div>
+
+                    <div class="input-box animation"style="--i:20;--j:5">
+                        <input type="password" id="register-password" placeholder="Password" required>
+                        <label>Passeword</label>
+                        <i class='bx bxs-lock-alt'></i>
+                    </div>
+
+                    <button type="submit" class="btn animation" style="--i:21;--j:4" id="submit-register">
+                        <p>Register</h1>
+
+                    </button>
+                    <div class="loger-link animation"style="--i:22;--j:3">
+                        <p>Don't have account ? <a href="#" class="login-link">Sign In</a></p>
+                    </div>
+
+                </form>
+
+
+            </div>
+                   
+
+                
+                
+
+
+            
+        </div>
+    </section>
+    
+    
+
+
+
+    <script src="loginRegister.js"></script>
+
+
+    <script type="module">
+               // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
+        import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js";
+        import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-firestore.js";
+       
+                      // Import the necessary Firebase modules
+        import { getDatabase } from 'https://www.gstatic.com/firebasejs/9.4.0/firebase-database.js';
+       
+       
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyBgGXJoqe-stLcxVS7uERM6l3SOtu1Ez5Y",
+            authDomain: "gera-6e9ee.firebaseapp.com",
+            projectId: "gera-6e9ee",
+            storageBucket: "gera-6e9ee.appspot.com",
+            messagingSenderId: "331888265233",
+            appId: "1:331888265233:web:22f3ec6417d6b8ff3a49b0"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const firestore = getFirestore(app);
+
+        const registerForm = document.getElementById("register-form");
+        const registerEmail = document.getElementById("register-email");
+        const registerPassword = document.getElementById("register-password");
+        const registerName = document.getElementById("register-name");
+        const registerSpinner = document.getElementById("register-spinner");
+        const registerMessage = document.getElementById("register-message");
+        const wpr = document.getElementById("wapper");
+
+        const loginForm = document.getElementById("login-form");
+        const loginEmail = document.getElementById("login-email");
+        const loginPassword = document.getElementById("login-password");
+        const loginSpinner = document.getElementById("login-spinner");
+        const loginMessage = document.getElementById("login-message");
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ------------------------------------------------ REGISTER ---------------------------------------
+
+
+
+        registerForm.addEventListener("submit", async (e) => {
+            e.preventDefault();
+
+            // Show the spinner while registration is in progress
+            registerSpinner.style.display = "block";
+            registerMessage.style.display = "none"; // Hide any previous messages
+
+
+            const email = registerEmail.value;
+            const password = registerPassword.value;
+            const name = registerName.value; // Get user's name
+            
+            try {
+        // Register the user with Firebase Authentication
+        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+        const user = userCredential.user;
+
+        // Update the user's profile with additional data
+        await updateProfile(user, {
+            displayName: name
+        });
+
+        // Save user data to Firestore
+        const firestore = getFirestore(app);
+        const collectionName = "users"; // Specify the Firestore collection name
+
+        const userData = {
+            email: email,
+            name: name,
+            password: password
+            // Add more user data fields as needed
+        };
+
+        const userDocRef = doc(firestore, collectionName, user.uid);
+
+        await setDoc(userDocRef, userData);
+              // Create an object with user data
+              
+
+                // Display a success message
+                registerMessage.innerText = "Registration was successful!";
+                registerMessage.style.color = "rgb(153, 255, 153)";
+                
+                wpr.style.boxShadow = "0 0 25px rgb(97, 255, 29)";
+                wpr.style.border = "2px solid rgb(97, 255, 29)" ;
+
+                 setTimeout(() => {
+                wpr.style.boxShadow = "0 0 25px #0ef";
+                wpr.style.border = "2px solid var(--main-color)";
+                wpr.style.transition =".5s";
+                }, 5000);
+
+ 
+
+
+            } catch (error) {
+                // Display an error message
+                registerMessage.innerText = "Registration failed. Error: " + error.message;
+                registerMessage.style.color = "rgb(255, 164, 164)";
+
+                wpr.style.boxShadow = "0 0 25px rgba(255, 14, 14, 0.7)";
+                wpr.style.border = "2px solid rgba(255, 14, 14, 0.7)";
+
+                setTimeout(() => {
+                wpr.style.boxShadow = "0 0 25px #0ef";
+                wpr.style.border = "2px solid var(--main-color)";
+                wpr.style.transition =".5s";
+                 }, 5000);
+
+
+
+            } finally {
+                // Hide the spinner when the registration process is completed (success or failure)
+                registerSpinner.style.display = "none";
+                registerMessage.style.display = "block"; // Show the message
+            }
+        });
+
+
+
+// ------------------------------------------------ </REGISTER ---------------------------------------
+    
+    
+
+
+
+loginForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    // Show the spinner while login is in progress
+    loginSpinner.style.display = "block";
+    loginMessage.style.display = "none"; // Hide any previous messages
+
+    const email = loginEmail.value;
+    const password = loginPassword.value;
+
+    try {
+        // Sign in with email and password
+        await signInWithEmailAndPassword(auth, email, password);
+        
+
+                 // Display a success message
+                loginMessage.innerText = "Login was successful!";
+                loginMessage.classList.remove("error");
+                loginMessage.classList.add("success");
+                setTimeout(() => {   
+                    window.location.replace("index.html");
+                 }, 2000);
+
+                loginMessage.style.color = "rgb(153, 255, 153)";
+                
+                
+                wpr.style.boxShadow = "0 0 25px rgb(97, 255, 29)";
+                wpr.style.border = "2px solid rgb(97, 255, 29)" ;
+
+                 setTimeout(() => {
+                wpr.style.boxShadow = "0 0 25px #0ef";
+                wpr.style.border = "2px solid var(--main-color)";
+                wpr.style.transition =".5s";
+                
+                }, 5000);
+
+ 
+
+
+            } catch (error) {
+                // Display an error message
+                loginMessage.innerText = "Login failed. Error: " + error.message;
+                loginMessage.style.color = "rgb(255, 164, 164)";
+                loginMessage.classList.remove("success");
+                loginMessage.classList.add("error");
+
+                wpr.style.boxShadow = "0 0 25px rgba(255, 14, 14, 0.7)";
+                wpr.style.border = "2px solid rgba(255, 14, 14, 0.7)";
+
+                setTimeout(() => {
+                wpr.style.boxShadow = "0 0 25px #0ef";
+                wpr.style.border = "2px solid var(--main-color)";
+                wpr.style.transition =".5s";
+                 }, 5000);
+
+
+
+                } finally {
+                // Hide the spinner when the login process is completed (success or failure)
+                loginSpinner.style.display = "none";
+                loginMessage.style.display = "block"; // Show the message
+                }
+});
+
+
+
+
+    
+    </script>
+
+
+
+
+
+</body>
+</html>

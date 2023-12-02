@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-compatible"content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entering Data</title>
+    
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap">
+
+    <link rel="stylesheet" href="EnteringData.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+</head>
+<body>
+    <header class="header " id="header_id">
+        <a href="index.html" class="logo">SSP</a>
+
+        <h3><strong>Name:</strong> <span id="user-name"></span></h3>
+        <h3><strong>Email:</strong> <span id="user-email"></span></h3>
+
+        <h2 class="heading">Create <span>Project</span></h2>
+
+
+    </header>
+
+
+
+        <div class="services-container" id="container_result_dash">
+            <div class="services-box fulllScreen">
+                
+                <div class="inpt">
+                    <p>Enter the number of the <span>Locations</span> & the number of <span>Data-Base</span> for each location</p>
+
+                    <div class="inpt1">
+                        <div class="form-box data_location_in">
+      
+                            <div class="input-box animation ">
+                                <input type="number" id="siteNumber" name="siteNumber" required>
+                                <label for="siteNumber">Site Number:</label>
+                                <i class='bx bx-line-chart'></i>
+
+                            </div>
+
+                            <div class="input-box animation ">
+                                <input type="number" id="bdNumber"  name="bdNumber" required>
+                                <label for="bdNumber">BD Num ber:</label>
+                                <i class='bx bx-line-chart'></i>
+
+                            </div>
+                        </div>
+
+                        <button class="btn" type="button" id="submitButton">Submit</button>
+
+
+                    </div>
+
+                </div>
+
+
+            
+            </div>
+
+        </div>
+
+
+
+<div class="button-bar">
+    <button class="btn_btm" id="Return_btn_dash">Return</button>
+
+    <div class="menu_dashbaord">
+        <div id="menu_dashbaord_sites"></div>
+        <div id="menu_dashbaord_comparaison"></div>
+        <div id="menu_dashbaord_classement"></div>
+    </div>
+    <button class="btn_btm" id="pdf_btn_dash">PDF </button>
+
+
+    <button class="btn_btm" id="user_btn_dash" onclick="headerDisable()">
+        <i class='bx bxs-user'></i>  
+    </button>
+
+    <button class="btn_btm" id="user_btn_dash1" onclick="headerDisable1()">
+        <i class='bx bxs-user'></i>  
+    </button>
+    <!-- Add more buttons as needed -->
+</div>
+
+
+
+<script>
+           var user_btn_dash=document.getElementById("user_btn_dash");
+           user_btn_dash.style.display="none";
+
+    function headerDisable() {
+
+    
+
+        var user_btn_dash=document.getElementById("user_btn_dash");
+        var user_btn_dash1=document.getElementById("user_btn_dash1");
+
+        var headerDisabl= document.getElementById("header_id");
+
+        if(headerDisabl){
+        headerDisabl.classList.remove('active');
+        user_btn_dash.style.display="none";
+        user_btn_dash1.style.display="block";
+
+
+        console.log('Add');
+        }
+        
+    }
+
+    function headerDisable1() {
+
+       var header_remove = document.getElementById("header_id");
+
+       var user_btn_dash=document.getElementById("user_btn_dash");
+       var user_btn_dash1=document.getElementById("user_btn_dash1");
+
+       if(header_remove){
+        header_remove.classList.add('active');
+        user_btn_dash.style.display="block";
+        user_btn_dash1.style.display="none";
+
+        console.log('remove');
+        }
+
+}
+
+
+</script>
+
+</body>
+</html>

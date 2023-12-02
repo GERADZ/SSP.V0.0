@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and Register</title>
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h1>Register</h1>
+            <form id="register-form">
+                <input type="text" id="register-name" placeholder="Full Name" required>
+                <input type="email" id="register-email" placeholder="Email" required>
+                <input type="password" id="register-password" placeholder="Password" required>
+                <button type="submit" id="submit-register">Register</button>
+            </form>
+            <!-- Add a spinner container -->
+            <div id="register-spinner" style="display: none;">
+                <div class="spinner-border" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+                <p>Registering...</p>
+            </div>
+            <!-- Display success or error messages -->
+            <div id="register-message" style="display: none;"></div>
+
+
+
+            <form id="login-form">
+                <input type="email" id="login-email" placeholder="Email" required>
+                <input type="password" id="login-password" placeholder="Password" required>
+                <button type="submit" id="submit-login">Login</button>
+            </form>
+
+            <!-- Add a spinner container -->
+            <div id="login-spinner" style="display: none;">
+                <div class="spinner-border" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+                <p>Logging in...</p>
+            </div>
+            <!-- Display success or error messages -->
+            <div id="login-message" style="display: none;"></div>
+
+        </div>
+
+
+    </div>
+
+    <style>
+        /* Apply general styles to the entire page */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.form-container {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    width: 300px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Style form fields and buttons */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+button[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    width: 100%;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Style the spinner container */
+#register-spinner,
+#login-spinner {
+    display: none;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.spinner-border {
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    vertical-align: text-bottom;
+    border: 0.25em solid currentColor;
+    border-right-color: transparent;
+    border-radius: 50%;
+    animation: spinner-border 0.75s linear infinite;
+}
+
+@keyframes spinner-border {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Style success and error messages */
+#register-message,
+#login-message {
+    text-align: center;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+#register-message {
+    color: green;
+}
+
+#login-message {
+    color: red;
+}
+
+    </style>
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
+        import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js";
+        import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-firestore.js";
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyBgGXJoqe-stLcxVS7uERM6l3SOtu1Ez5Y",
+            authDomain: "gera-6e9ee.firebaseapp.com",
+            projectId: "gera-6e9ee",
+            storageBucket: "gera-6e9ee.appspot.com",
+            messagingSenderId: "331888265233",
+            appId: "1:331888265233:web:22f3ec6417d6b8ff3a49b0"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const collectionName = "usersList"; // Specify the collection name where you want to store user data
+        const firestore = getFirestore(app);
+
+        const registerForm = document.getElementById("register-form");
+        const registerEmail = document.getElementById("register-email");
+        const registerPassword = document.getElementById("register-password");
+        const registerName = document.getElementById("register-name");
+        const registerSpinner = document.getElementById("register-spinner");
+        const registerMessage = document.getElementById("register-message");
+
+        const loginForm = document.getElementById("login-form");
+        const loginEmail = document.getElementById("login-email");
+        const loginPassword = document.getElementById("login-password");
+        const loginSpinner = document.getElementById("login-spinner");
+        const loginMessage = document.getElementById("login-message");
+
+
+
+
+//----------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+        // ------------------------------------------------
+
+        registerForm.addEventListener("submit", async (e) => {
+            e.preventDefault();
+
+            // Show the spinner while registration is in progress
+            registerSpinner.style.display = "block";
+            registerMessage.style.display = "none"; // Hide any previous messages
+
+
+            const email = registerEmail.value;
+            const password = registerPassword.value;
+            const name = registerName.value; // Get user's name
+            
+            try {
+        // Register the user with Firebase Authentication
+        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+        const user = userCredential.user;
+
+        // Update the user's profile with additional data
+        await updateProfile(user, {
+            displayName: name
+        });
+
+        // Save user data to Firestore
+        const firestore = getFirestore(app);
+        const collectionName = "users"; // Specify the Firestore collection name
+
+        const userData = {
+            email: email,
+            name: name,
+            password: password
+            // Add more user data fields as needed
+        };
+
+        const userDocRef = doc(firestore, collectionName, user.uid);
+
+        await setDoc(userDocRef, userData);
+              // Create an object with user data
+
+                // Display a success message
+                registerMessage.innerText = "Registration was successful!";
+                registerMessage.style.color = "green";
+            } catch (error) {
+                // Display an error message
+                registerMessage.innerText = "Registration failed. Error: " + error.message;
+                registerMessage.style.color = "red";
+            } finally {
+                // Hide the spinner when the registration process is completed (success or failure)
+                registerSpinner.style.display = "none";
+                registerMessage.style.display = "block"; // Show the message
+            }
+        });
+
+        loginForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    // Show the spinner while login is in progress
+    loginSpinner.style.display = "block";
+    loginMessage.style.display = "none"; // Hide any previous messages
+
+    const email = loginEmail.value;
+    const password = loginPassword.value;
+
+    try {
+        // Sign in with email and password
+        await signInWithEmailAndPassword(auth, email, password);
+
+        // Retrieve user's email
+        const user = auth.currentUser;
+        const userEmail = user.email;
+
+        // Display the email on the home page
+        document.getElementById("user-email").innerText = userEmail;
+
+        // Redirect to the home page after successful login
+        window.location.href = 'testhomepage.html'; // Replace with the actual home page URL
+    } catch (error) {
+        // Display an error message
+        loginMessage.innerText = "Login failed. Error: " + error.message;
+        loginMessage.style.color = "red";
+    } finally {
+        // Hide the spinner when the login process is completed (success or failure)
+        loginSpinner.style.display = "none";
+        loginMessage.style.display = "block"; // Show the message
+    }
+});
+
+
+    
+    </script>
+</body>
+</html>

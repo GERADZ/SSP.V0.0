@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-compatible"content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entering Data</title>
+    
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap">
+
+    <link rel="stylesheet" href="EnteringData.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+
+</head>
+<body>
+
+    <header class="header">
+        <a href="hello.html" class="logo">SSP</a>
+        <h2 class="heading">Entering  <span>Data</span></h2>
+
+
+
+
+        <nav class="navbar" id="navbarid">
+
+
+
+        </nav>
+    </header>
+
+
+<div class="datainput" id="datainputID">
+    <section class="services1" id="services">
+
+        <div class="EnteringData_title" id="EnteringData_title">
+            <h2 class="heading">Entering  <span>Data</span></h2>
+            <i class='bx bxs-paint bx-tada' ></i>
+        </div>
+
+        <div class="services-container" id="seccontainer">
+
+            <div class="services-box">
+               <i class='bx bxs-paint'></i>
+               <h3>Entering Data</h3>
+               <p> If you have data and you want to use it , this feature give you the opportunity to use your <span>private data</span>   </p>
+               <h2 id="selectNumber" class="selectNumber">select the number of Databases and sites </h2>
+               <h2 id="selceterro" class="selceterro">Please select an option for both fields.</h2>
+
+               <h2 id="successfully" class="successfully">The project is created successfully ! <div class="spinner" id="spinner"></div></h2>
+               
+
+
+
+                <div class="select">
+
+                  <select id="mySelect">
+                    <option value="option0"disabled selected>select</option>
+                    <option value="option1">CSP</option>
+                    <!-- Ajoutez autant d'options que nécessaire -->
+                    </select>
+                    <select id="mySelect1">
+                        <option value="option0"disabled selected>select</option>
+                        <option value="option1">2 Databases</option>
+                        <option value="" disabled selected>3 Databases</option>
+                        
+                        <!-- Ajoutez autant d'options que nécessaire -->
+                    </select>
+                    <select id="mySelect2">
+                        <option value="option0"disabled selected>select</option>
+                        <option value="option1">2 sites</option>
+                        <option value="" disabled selected>3 sites</option>
+                        <option value="" disabled selected>4 sites</option>
+                        <option value="" disabled selected>5 sites</option>
+
+
+                        <!-- Ajoutez autant d'options que nécessaire -->
+                    </select>
+               </div>
+               
+
+
+
+               <button  class="btn"  id="creatProject">  create  </button> 
+
+            
+              </div>
+        </div>
+
+
+    </section>
+
+   <section class="services1" id="enterData">
+    
+       <div class="EnteringData_title" id="EnteringData_title">
+        <h2> 2 Databases <span>&</span> 2 Sites</h2>
+        <i class='bx bxs-paint bx-tada' ></i>
+
+       </div>
+
+       <div class="EnterDataBox">
+        <div class="wapper" id="wapper">
+
+       
+            <div class="form-box site1database1" >
+                <div class="infodata">
+                    <form action="#" id="data-site1-form">
+                        <div class="input-box animation">
+                            <input type="text" required id="Nplace1">
+                            <label>Site Name 1</label>
+                            <i class='bx bxs-map' ></i>
+                        </div>
+                        <div class="input-box animation">
+                            <input type="text" required id="P1Ndatabase1" >
+                            <label>database Name 1</label>
+                            <i class='bx bxs-data' ></i>
+                        </div>
+                        <h3 class="projectcancelled" id="projectcancelled" >The project has been cancelled </h3>
+                        <div class="spinner" id="spinner1"></div>
+                        
+                    </form>
+                </div>
+                <div class="contentDataJan-juin">
+                    
+                    
+                        <div class="input-box animation">
+                            <input type="number" required id="D1P1january">
+                            <label>January</label>
+                            <i class='bx bxs-data' ></i>
+                        </div>
+                        <div class="input-box animation">
+                            <input type="number" required id="D1P1february" >
+                            <label>February</label>
+                            <i class='bx bxs-data' ></i>
+                        </div>
+                        <div class="input-box animation">
+                            <input type="number" required id="D1P1march" >
+                            <label>March</label>
+                            <i class='bx bxs-data' ></i>
+                        </div>
+                        <div class="input-box animation">
+                            <input type="number" required id="D1P1april" >
+                            <label>April</label>
+                            <i class='bx bxs-data' ></i>
+                        </div>
+                        <div class="input-box animation">
+                            <input type="number" required id="D1P1may" >
+                            <label>May</label>
+                            <i class='bx bxs-data' ></i>
+                        </div>
+                        <div class="input-box animation">
+                            <input type="number" required id="D1P1june" >
+                            <label>June</label>
+                            <i class='bx bxs-data' ></i>
+                        </div>
+                        
+                     
+                </div>
+                <div class="contentDatajuil-dec">
+                    <div class="input-box animation">
+                        <input type="number" required id="D1P1july" >
+                        <label>July</label>
+                        <i class='bx bxs-data' ></i>
+                    </div>
+                    <div class="input-box animation">
+                        <input type="number" required id="D1P1august" >
+                        <label>August</label>
+                        <i class='bx bxs-data' ></i>
+                    </div>
+                    <div class="input-box animation">
+                        <input type="number" required id="D1P1september" >
+                        <label>September</label>
+                        <i class='bx bxs-data' ></i>
+                    </div>
+                    <div class="input-box animation">
+                        <input type="number" required id="D1P1october" >
+                        <label>October</label>
+                        <i class='bx bxs-data' ></i>
+                    </div>
+                    <div class="input-box animation">
+                        <input type="number" required id="D1P1november" >
+                        <label>November</label>
+                        <i class='bx bxs-data' ></i>
+                    </div>
+                    <div class="input-box animation">
+                        <input type="number" required id="D1P1december" >
+                        <label>December</label>
+                        <i class='bx bxs-data' ></i>
+                    </div>
+                </div>
+                <div class="nextButton animation">
+                    <button class="btn" id="next">Next</button>
+                    <button class="btn" id="cancel">cancel</button>
+
+                </div> 
+            </div>
+
+
+            <div class="form-box site1database2" >
+                <div class="infodata">
+                    <form action="#">
+                        <div class="input-box animation">
+                            <input type="text" required id="P1Ndatabase2" >
+                            <label>database Name 2</label>
+                            <i class='bx bxs-data' ></i>
+                        </div>
+                    </form>
+                </div>
+                <div class="contentDataJan-juin">
+
+                        <div class="input-box animation">
+                            <input type="number" required id="D2P1january">
+                            <label>January</label>
+                            <i class='bx bxs-data' ></i>
+                        </div>
+                        <div class="input-box animation">
+                            <input type="number" required id="D2P1february" >
+                            <label>February</label>
+                            <i class='bx bxs-data' ></i>
+                        </div>
+                        <div class="input-box animation">
+                            <input type="number" required id="D2P1march" >
+                            <label>March</label>
+                            <i class='bx bxs-data' ></i>
+                        </div>
+                        <div class="input-box animation">
+                            <input type="number" required id="D2P1april" >
+                            <label>April</label>
+                            <i class='bx bxs-data' ></i>
+                        </div>
+                        <div class="input-box animation">
+                            <input type="number" required id="D2P1may" >
+                            <label>May</label>
+                            <i class='bx bxs-data' ></i>
+                        </div>
+                        <div class="input-box animation">
+                            <input type="number" required id="D2P1june" >
+                            <label>June</label>
+                            <i class='bx bxs-data' ></i>
+                        </div>
+                        
+                     
+                </div>
+                <div class="contentDatajuil-dec">
+                        <div class="input-box animation">
+                        <input type="number" required id="D2P1july" >
+                        <label>July</label>
+                        <i class='bx bxs-data' ></i>
+                    </div>
+                    <div class="input-box animation">
+                        <input type="number" required id="D2P1august" >
+                        <label>August</label>
+                        <i class='bx bxs-data' ></i>
+                    </div>
+                    <div class="input-box animation">
+                        <input type="number" required id="D2P1september" >
+                        <label>September</label>
+                        <i class='bx bxs-data' ></i>
+                    </div>
+                    <div class="input-box animation">
+                        <input type="number" required id="D2P1october" >
+                        <label>October</label>
+                        <i class='bx bxs-data' ></i>
+                    </div>
+                    <div class="input-box animation">
+                        <input type="number" required id="D2P1november" >
+                        <label>November</label>
+                        <i class='bx bxs-data' ></i>
+                    </div>
+                    <div class="input-box animation">
+                        <input type="number" required id="D2P1december" >
+                        <label>December</label>
+                        <i class='bx bxs-data' ></i>
+                    </div>
+                    
+                </div>
+                <div class="nextButton animation">
+                    <button class="btn" id="next1">Next</button>
+                    <button class="btn" id="return">return</button>
+
+                </div> 
+            </div>
+
+
+            <div class="form-box site2database1" >
+                <div class="infodata">
+                    <form action="#" id="data-site2-form">
+                        <div class="input-box animation">
+                            <input type="text" required id="Nplace2">
+                            <label>Site Name 2</label>
+                            <i class='bx bxs-map' ></i>
+                        </div>
+                        <div class="input-box animation">
+                            <input type="text" required id="P2Ndatabase1" >
+                            <label>database Name 1</label>
+                            <i class='bx bxs-data' ></i>
+                        </div>
+                    </form>
+                </div>
+                <div class="contentDataJan-juin">
+
+                    
+                    
+                    
+                    
+                    
+                    
+
+                        <div class="input-box animation">
+                            <input type="number" required id="D1P2january">
+                            <label>January</label>
+                            <i class='bx bxs-data' ></i>
+                        </div>
+                        <div class="input-box animation">
+                            <input type="number" required id="D1P2february" >
+                            <label>February</label>
+                            <i class='bx bxs-data' ></i>
+                        </div>
+                        <div class="input-box animation">
+                            <input type="number" required id="D1P2march" >
+                            <label>March</label>
+                            <i class='bx bxs-data' ></i>
+                        </div>
+                        <div class="input-box animation">
+                            <input type="number" required id="D1P2april" >
+                            <label>April</label>
+                            <i class='bx bxs-data' ></i>
+                        </div>
+                        <div class="input-box animation">
+                            <input type="number" required id="D1P2may" >
+                            <label>May</label>
+                            <i class='bx bxs-data' ></i>
+                        </div>
+                        <div class="input-box animation">
+                            <input type="number" required id="D1P2june" >
+                            <label>June</label>
+                            <i class='bx bxs-data' ></i>
+                        </div>
+                        
+                     
+                </div>                    
+                
+                
+                <div class="contentDatajuil-dec">
+                    <div class="input-box animation">
+                        <input type="number" required id="D1P2july" >
+                        <label>July</label>
+                        <i class='bx bxs-data' ></i>
+                    </div>
+                    <div class="input-box animation">
+                        <input type="number" required id="D1P2august" >
+                        <label>August</label>
+                        <i class='bx bxs-data' ></i>
+                    </div>
+                    <div class="input-box animation">
+                        <input type="number" required id="D1P2september" >
+                        <label>September</label>
+                        <i class='bx bxs-data' ></i>
+                    </div>
+                    <div class="input-box animation">
+                        <input type="number" required id="D1P2october" >
+                        <label>October</label>
+                        <i class='bx bxs-data' ></i>
+                    </div>
+                    <div class="input-box animation">
+                        <input type="number" required id="D1P2november" >
+                        <label>November</label>
+                        <i class='bx bxs-data' ></i>
+                    </div>
+                    <div class="input-box animation">
+                        <input type="number" required id="D1P2december" >
+                        <label>December</label>
+                        <i class='bx bxs-data' ></i>
+                    </div>
+                </div>
+                <div class="nextButton animation">
+                    <button class="btn" id="next2">Next</button>
+                    <button class="btn" id="return2">return</button>                </div> 
+            </div>
+
+            <div class="form-box site2database2" >
+                <div class="infodata">
+                    <form action="#" id="data-site1-form">
+                        <div class="input-box animation">
+                            <input type="text" required id="P2Ndatabase2" >
+                            <label>database Name 2</label>
+                            <i class='bx bxs-data' ></i>
+                        </div>
+                    </form>
+                </div>
+                <div class="contentDataJan-juin">
+                    
+                        <div class="input-box animation">
+                            <input type="number" required id="D2P2january">
+                            <label>January</label>
+                            <i class='bx bxs-data' ></i>
+                        </div>
+                        <div class="input-box animation">
+                            <input type="number" required id="D2P2february" >
+                            <label>February</label>
+                            <i class='bx bxs-data' ></i>
+                        </div>
+                        <div class="input-box animation">
+                            <input type="number" required id="D2P2march" >
+                            <label>March</label>
+                            <i class='bx bxs-data' ></i>
+                        </div>
+                        <div class="input-box animation">
+                            <input type="number" required id="D2P2april" >
+                            <label>April</label>
+                            <i class='bx bxs-data' ></i>
+                        </div>
+                        <div class="input-box animation">
+                            <input type="number" required id="D2P2may" >
+                            <label>May</label>
+                            <i class='bx bxs-data' ></i>
+                        </div>
+                        <div class="input-box animation">
+                            <input type="number" required id="D2P2june" >
+                            <label>June</label>
+                            <i class='bx bxs-data' ></i>
+                        </div>
+                        
+                     
+                </div>
+                <div class="contentDatajuil-dec">
+                    <div class="input-box animation">
+                        <input type="number" required id="D2P2july" >
+                        <label>July</label>
+                        <i class='bx bxs-data' ></i>
+                    </div>
+                    <div class="input-box animation">
+                        <input type="number" required id="D2P2august" >
+                        <label>August</label>
+                        <i class='bx bxs-data' ></i>
+                    </div>
+                    <div class="input-box animation">
+                        <input type="number" required id="D2P2september" >
+                        <label>September</label>
+                        <i class='bx bxs-data' ></i>
+                    </div>
+                    <div class="input-box animation">
+                        <input type="number" required id="D2P2october" >
+                        <label>October</label>
+                        <i class='bx bxs-data' ></i>
+                    </div>
+                    <div class="input-box animation">
+                        <input type="number" required id="D2P2november" >
+                        <label>November</label>
+                        <i class='bx bxs-data' ></i>
+                    </div>
+                    <div class="input-box animation">
+                        <input type="number" required id="D2P2december" >
+                        <label>December</label>
+                        <i class='bx bxs-data' ></i>
+                    </div>
+                </div>
+                <div class="nextButton animation">
+                    <button class="btn" id="next3">Next</button>
+                    <button class="btn" id="return3">return</button>
+
+
+                </div> 
+            </div>
+
+            <div class="form-box x">
+                <div class="infodata">
+                        <div class="spinner" id="spinner1"></div>
+
+                </div>
+                <div class="contentDataJan-juin">
+                    <div class="input-box animation">
+                        <input type="number" required id="X1">
+                        <label>X1</label>
+                        <i class='bx bxs-extension'></i>
+                    </div>
+                    <div class="input-box animation">
+                        <input type="number" required id="X2" >
+                        <label>X2</label>
+                        <i class='bx bxs-extension'></i>
+                    </div>
+                    <div class="input-box animation">
+                        <input type="number" required id="X3" >
+                        <label>X3</label>
+                        <i class='bx bxs-extension'></i>
+                    </div>
+                    <div class="input-box animation">
+                        <input type="number" required id="X4" >
+                        <label>X4</label>
+                        <i class='bx bxs-extension'></i>
+                    </div>
+
+                </div>
+                <div class="nextButton animation">
+                    <button class="btn" id="return4">return</button>
+                </div> 
+                <div class="nextButton animation">
+                    <button class="btn" id="confirme" onclick="resutsD2L2()">confirme</button>
+                </div> 
+            </div>
+            
+
+        </div>
+
+       </div>
+
+
+    </section>
+
+</div>
+
+<div class="data-Result" id="data-Result">
+    
+    <section class="services" id="resut1">
+        <div class="tableau">
+            <!-- Schedule -->
+            <h2> ALL DATA </h2>
+          
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name Location</th>
+                        <th>Name DATA-base</th>
+                        <th>january</th>
+                        <th>february</th>
+                        <th>march</th>
+                        <th>april</th>
+                        <th>may</th>
+                        <th>june</th>
+                        <th>july</th>
+                        <th>august</th>
+                        <th>september</th>
+                        <th>october</th>
+                        <th>november</th>
+                        <th>december</th>
+                    </tr>
+                </thead>
+                <tbody id="schedule">
+                </tbody>
+            </table>
+
+            <button  class="btn"  id="editData">  Edit  </button> 
+            <div class="spinner" id="spinnerEdit"></div>
+
+    
+        </div>
+
+    </section>
+    <section class="graphone" id="graphone">  
+        <div class="background-text-graphone">
+            <h2>A graohical curve that represents the annual total of DNI <span>(kWh/m2/month)</span></h2>
+        </div>
+        <div class="background-graphone">
+            <canvas class="myChart" id="myChart"></canvas>
+        </div>
+    </section>
+
+
+    <section class="services" id="tab-all-somme-data-anuell">
+        <div class="background-text-graphone">
+            <h2>annual DNI<span>(kWh/m2/month)</span></h2>
+        </div>
+        <div class="tableau">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name Location</th>
+                        <th>Name DATA-base</th>
+                        <th>annual DNI </th>
+                    </tr>
+                </thead>
+                <tbody id="S_schedule">
+                </tbody>
+            </table>
+            
+        </div>
+        <div class="background-graphone">
+            <canvas class="myChart" id="Chart_data_anuell"></canvas>
+        </div>
+
+    </section>
+
+
+    <section class="graphone" id ="valeurMAX">
+        <div  class="tableau">
+             <!-- Schedule -->
+            <h2>  <span>MAX</span>  DNI</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name Location</th>
+                        <th>Name DATA-base</th>
+                        <th>MAX - DNI </th>
+                    </tr>
+                </thead>
+                <tbody id="max_schedule">
+                </tbody>
+            </table>
+            <div class="textinfo">
+                <div id="maxD1P1"></div>
+                <div id="maxD2P1"></div>
+                <div id="maxD1P2"></div>
+                <div id="maxD2P2"></div>
+    
+            </div>
+       </div>
+    
+    
+        <div class="background-graphone">
+             <canvas id="graph_data_MAX"></canvas>
+        </div>
+    </section>
+    <section class="services" id ="valeurMIN">
+        <div  class="tableau">
+                            <!-- Schedule -->
+                            <h2> <span>MIN</span>  DNI </h2>
+          
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Name Location</th>
+                                        <th>Name DATA-base</th>
+                                        <th>MIN - DNI </th>
+                                    </tr>
+                                </thead>
+                                <tbody id="min_schedule">
+                                </tbody>
+                            </table>
+                            <div class="textinfo">
+                                <div id="minD1P1"></div>
+                                <div id="minD2P1"></div>
+                                <div id="minD1P2"></div>
+                                <div id="minD2P2"></div>
+    
+                            </div>
+    
+        </div>
+        <div class="background-graphone">
+            <canvas id="graph_data_MIN"></canvas>
+        </div>
+    </section>
+
+
+    <section class="graphone" id ="etandtu">
+        <div class="tableau"> 
+            <h2>   <span>absolute</span>extent (kWh/m2)</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Location</th>
+                        <th>DATA-base</th>
+                        <th>absolute extent (kWh/m2) </th>
+                    </tr>
+                </thead>
+                <tbody id="etandu_absolute_schedule">
+                </tbody>
+            </table>
+    
+        </div>
+        <div class="tableau">
+            <h2> <span>relative</span> extent (%) </h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Location</th>
+                        <th>DATA-base</th>
+                        <th>relative extent (%) </th>
+                    </tr>
+                </thead>
+                <tbody id="etandu_relative_schedule">
+                </tbody>
+            </table>
+        </div>
+    
+    </section>
+
+
+    <section class="services" id="saisonn">
+        <div class="tableau">
+    
+            <h2 id="L1"> the seasonal sun of </h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>seasons (kWh/m2/season)</th>
+                        <th id="D11">DATA-base</th>
+                        <th id="D21">DATA-base</th>
+                    </tr>
+                </thead>
+                <tbody id="L1_saisonn_schedule">
+                </tbody>
+            </table>
+    
+            <div class="background-graphone">
+                <canvas id="graph_L1"></canvas>
+           </div>
+    
+        </div>
+
+        <div class="tableau">
+            <h2 id="L2"> the seasonal sun of </h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>seasons (kWh/m2/season)</th>
+                        <th id="D12">DATA-base</th>
+                        <th id="D22">DATA-base</th>
+                    </tr>
+                </thead>
+                <tbody id="L2_saisonn_schedule">
+                </tbody>
+            </table>
+            <div class="background-graphone">
+                <canvas id="graph_L2"></canvas>
+           </div>
+    
+        </div>
+    </section>
+
+    <section class="graphone" id="scinariolocation1">
+ 
+        <div class="tableau">
+
+            <h2 id="lo1">scenarios of <span>location 1</span> </h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>  scenarios </th>
+                        <th> january </th>
+                        <th> february </th>
+                        <th> march </th>
+                        <th> april </th>
+                        <th> may </th>
+                        <th> june </th>
+                        <th> july </th>
+                        <th> august </th>
+                        <th> september </th>
+                        <th> october </th>
+                        <th> november </th>
+                        <th> december </th>
+                    </tr>
+                </thead>
+                <tbody id="table_senarios1_schedule">
+                </tbody>
+            </table>
+        </div>
+        <div class="background-graphone">
+            <canvas id="graph_SC_L1"></canvas>
+        </div>
+    
+    </section>
+
+
+
+    <section class="services" id="scinariolocation2">
+
+        <div class="tableau">
+
+            <h2 id="lo2">scenarios of <span>location 2</span></h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>  scenarios </th>
+                        <th> january </th>
+                        <th> february </th>
+                        <th> march </th>
+                        <th> april </th>
+                        <th> may </th>
+                        <th> june </th>
+                        <th> july </th>
+                        <th> august </th>
+                        <th> september </th>
+                        <th> october </th>
+                        <th> november </th>
+                        <th> december </th>
+                    </tr>
+                </thead>
+                <tbody id="table_senarios2_schedule">
+                </tbody>
+            </table>
+        </div>
+        <div class="background-graphone">
+            <canvas id="graph_SC_L2"></canvas>
+        </div>
+    
+       </section>
+
+
+
+
+       <section class="graphone" id="New_data">
+
+        <div class="tableau">
+            <h2 id="lo2">NEW DATA</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>  scenarios </th>
+                        <th> january </th>
+                        <th> february </th>
+                        <th> march </th>
+                        <th> april </th>
+                        <th> may </th>
+                        <th> june </th>
+                        <th> july </th>
+                        <th> august </th>
+                        <th> september </th>
+                        <th> october </th>
+                        <th> november </th>
+                        <th> december </th>
+                    </tr>
+                </thead>
+                <tbody id="table_content_new_data">
+                </tbody>
+            </table> 
+        </div>
+        <div class="background-graphone">
+            <canvas id="graph_content_new_data"></canvas>
+            
+        </div>
+    
+       </section>
+
+
+
+       <section class="services" id="n_d_somme_anuelle">
+
+      <div class="background_n_d_anuell">
+        <h2 id="lo2">annual <span>DNI</span> </h2>
+
+        <div class="table_n_d_anuell">
+          <div class="tableau">
+            <h2>annual DNI <span>-new data-</span> </h2>
+          </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th> location </th>
+                        <th>annual DNI </th>
+                    </tr>
+                </thead>
+                <tbody id="table_content_n_d_anuell">
+                </tbody>
+            </table>
+
+
+          <div class="ranking_by_rating">
+            <h1>ranking by <span>rating</span></h1>
+          </div>
+
+        <div class="background-graphone">
+            <canvas id="graph_content_n_d_anuell"></canvas>
+        </div>
+      </div>
+
+
+      </section>
+
+</div>
+ 
+
+
+
+
+<script type="module" src="EnteringData.js"></script>
+<script src="EnteringData-result2D2L.js"></script>
+
+</body>
+</html>

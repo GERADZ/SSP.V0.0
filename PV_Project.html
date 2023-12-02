@@ -1,0 +1,1830 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-compatible"content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entering Data</title>
+    
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap">
+
+    <link rel="stylesheet" href="EnteringData.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+    <script src="https://rawgit.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
+
+
+
+</head>
+<body>
+    <header class="header" id="header_id">
+        <a href="index.html" class="logo">SSP</a>
+
+        <h3><strong>Name:</strong> <span id="user-name"></span></h3>
+        <h3><strong>Email:</strong> <span id="user-email"></span></h3>
+
+
+        <h2 class="heading">Create <span>Project</span></h2>
+
+
+
+        <nav class="navbar" id="navbarid">
+
+
+
+        </nav>
+    </header>
+
+
+<div class="datainput" id="datainputID">
+
+    <section class="services1" id="servicesAA">
+
+        <div class="EnteringData_title" id="EnteringData_title">
+            <h2 class="heading">Create   <span>project</span></h2>
+            <i class='bx bx-line-chart bx-fade-up' ></i>
+        </div>
+
+
+
+        <div class="services-container" id="seccontainer">
+
+            <div class="services-box">
+                <i class='bx bx-line-chart'></i>
+                <h3>Create project</h3>
+                <p>If you enter your data or import it automatically , creat a project and <span>recive the site report.</span>   </p>
+                
+               <h2 id="selcet_erroText" class="selceterro">Please Enter the number of the Locations & the number of Data-Base for each location</h2>
+               <h2 id="site_edit" class="selceterro">Please choose a number greater than "2" </h2>
+               <h2 id="data_edit" class="successfully">The project was created successfully !</h2>
+               <div class="spinner"></div>
+
+                <div class="inpt">
+                    <p>Enter the number of the <span>Locations</span> & the number of <span>Data-Base</span> for each location</p>
+
+                    <div class="inpt1">
+                        <div class="form-box data_location_in">
+      
+                            <div class="input-box animation ">
+                                <input type="number" id="siteNumber" name="siteNumber" required>
+                                <label for="siteNumber">Site Number:</label>
+                                <i class='bx bx-line-chart'></i>
+
+                            </div>
+
+                            <div class="input-box animation ">
+                                <input type="number" id="bdNumber" name="bdNumber" required>
+                                <label for="bdNumber">BD Number:</label>
+                                <i class='bx bx-line-chart'></i>
+
+                            </div>
+                        </div>
+
+                        <button class="btn" type="button" id="submitButton">Submit</button>
+
+
+                    </div>
+
+                </div>
+
+
+            
+              </div>
+        </div>
+
+
+    </section>
+
+
+    <section class="services1" id="services" >
+
+        <div class="container_de_calcule">
+
+            <div class="services-container inputs_button">
+
+                <div class="services-box options">
+                    
+                    <h1>Createbr<br> <span>project</span> </h1><br>
+
+                    <div id="cretaButtonScroll"></div>
+
+
+                    
+
+                </div>
+
+                <footer class="footer">
+                    <div class="footer-text">
+                        <p>Copyright &copy;2023 by GERA .Right Reserved</p>
+                    </div>
+                    <div class="footer-iconRet" disabled>
+                        <a href="index.html">
+                            <i class='bx bx-subdirectory-left'></i>
+                        </a>
+                    </div>
+                    <div class="footer-iconTop" id="next_to_project_result_btn">
+                        <a id="g" class="footer_next_btn">
+                            <i class='bx bx-subdirectory-right'></i>
+                        </a>
+                    </div>
+
+                </footer>
+            </div>
+    
+            <div class="services-container inputs_showBox">
+                <div class="services-box show">
+
+                     <div id="div-container" class="bg_select_show">
+                     </div>
+
+
+                </div>
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+
+
+    <section class="services1 a" id="result_dash">
+        <div class="container_de_resul">
+
+            <div class="services-container result">
+                <div class="services-box result">
+
+                    <div class="dash" id="display-container"></div>
+
+                </div>
+            </div>
+            <div class="services-container menu_result">
+                <div class="services-box menu_result">
+
+                        <button class="btn_btm" id="Return_btn_dash" >Return </button>
+                    
+                        <div class="menu_dashbaord">
+                            <div id="menu_dashbaord_sites" class="menu_dashbaord_sites_row"></div>
+                            <div id="menu_dashbaord_comparaison">
+                                <div class="options_box_Button" id="comparison_scroll_button">
+                                    <h2>Comparison</h2>
+                                </div>
+                            </div>
+                            <div id="menu_dashbaord_Ranking">
+                                <div class="options_box_Button" id="Ranking_scroll_button">
+                                    <h2>Ranking</h2>
+                                </div>
+                            </div>
+                            <div id="menu_dashbaord_classement"></div>
+                        </div>       
+                
+                
+                        <button class="btn_btm" id="pdf_btn_dash">PDF </button>
+                    
+                        <button class="btn_btm" id="user_btn_dash" onclick="headerDisable()">
+                            <i class='bx bxs-user'></i>  
+                        </button>
+                    
+                        <button class="btn_btm" id="user_btn_dash1" onclick="headerDisable1()">
+                            <i class='bx bxs-user'></i>  
+                        </button>
+                        <!-- Add more buttons as needed -->
+
+                </div>
+            </div>
+            <div class="overlay" id="overlay">
+                <div class="SSPlogo">
+                    <img src="image/logo_SSP.png" alt="">
+                </div>
+                <div class="loading-text">
+                    Please wait, downloading in progress...
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+
+
+
+    
+</div>
+
+<div class="message-not-available" id="servisError">
+    <div class="services-box">
+       <i class='bx bxs-error bx-tada' ></i>  
+       <h3> Importing Data <span-red>404</span-red></h3>
+       <p> Login failed. Please check your login or check your internet connection and <a href="loginRegister.html"><span>try again.</span></a> </p>
+       <h3> <span-red>Not available !</span-red>  </h3> 
+    </div>
+</div>
+
+
+    <script src="https://rawgit.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
+
+    <script type="module" src="https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/10.4.0/firebase-firestore.js"></script>
+
+    <script>
+
+        var user_btn_dash1=document.getElementById("user_btn_dash1");
+        user_btn_dash1.style.display="none";
+
+
+
+     function headerDisable() {
+
+ 
+
+     var user_btn_dash=document.getElementById("user_btn_dash");
+     var user_btn_dash1=document.getElementById("user_btn_dash1");
+
+     var headerDisabl= document.getElementById("header_id");
+
+     if(headerDisabl){
+     headerDisabl.classList.remove('active');
+     user_btn_dash.style.display="none";
+     user_btn_dash1.style.display="block";
+
+
+     console.log('Add');
+     }
+     
+ }
+
+ function headerDisable1() {
+
+    var header_remove = document.getElementById("header_id");
+
+
+    var user_btn_dash=document.getElementById("user_btn_dash");
+    var user_btn_dash1=document.getElementById("user_btn_dash1");
+
+    if(header_remove){
+     header_remove.classList.add('active');
+     user_btn_dash.style.display="block";
+     user_btn_dash1.style.display="none";
+
+     console.log('remove');
+     }
+
+}
+
+
+    </script>
+
+    <script type="module">
+        import {initializeApp} from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
+        import {getAuth,
+            createUserWithEmailAndPassword,
+            signInWithEmailAndPassword,
+            updateProfile} from "https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js";
+        import {
+            getFirestore,
+            setDoc,
+            getDocs,
+            getDoc,
+            doc,
+            collection,
+            addDoc,
+            deleteDoc,
+            updateDoc
+        } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-firestore.js";
+
+        // Initialize Firebase (use your own Firebase configuration)
+        const firebaseConfig = {
+            apiKey: "AIzaSyBgGXJoqe-stLcxVS7uERM6l3SOtu1Ez5Y",
+            authDomain: "gera-6e9ee.firebaseapp.com",
+            projectId: "gera-6e9ee",
+            storageBucket: "gera-6e9ee.appspot.com",
+            messagingSenderId: "331888265233",
+            appId: "1:331888265233:web:22f3ec6417d6b8ff3a49b0"
+        };
+
+
+
+
+   
+
+
+
+            
+    const seccontainer = document.getElementById('servicesAA');
+    const services = document.getElementById('services');
+    const result_dash = document.getElementById('result_dash');
+
+
+    seccontainer.style.display = "block";
+    services.style.display = "none";
+    result_dash.style.display = "none";
+    //button_bar_info.style.display = "none";
+
+    
+
+
+   
+    
+
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const collectionName = "users";
+        const bdCollectionName = "Base de Donnees";
+        const db = getFirestore(app);
+
+
+        auth.onAuthStateChanged((user) => {
+    if (user) {
+        // User is signed in
+        const userName = user.displayName;
+        const userEmail = user.email; 
+
+        // Display user data on the profile page
+        document.getElementById("user-name").textContent =  userName;
+        document.getElementById("user-email").textContent =   userEmail;
+
+        // Show the services container
+        servisError.style.display ="none";
+        datainputID.style.display="block";
+
+        
+    } else {
+
+        // Display user data on the profile page
+        document.getElementById("user-name").textContent =  "ERROR";
+        document.getElementById("user-email").textContent =   "ERROR";
+
+        // User is not signed in, hide the services container
+        datainputID.style.display = "none";
+        servisError.style.display="block";
+    }
+});
+
+
+var Return_btn_dash  = document.getElementById('Return_btn_dash');
+Return_btn_dash.addEventListener('click',()=>{
+    window.location.replace("creartProject.html");
+}); 
+
+
+var submitb = document.getElementById('submitButton');
+
+submitb.addEventListener('click', () => {
+
+
+    const siteNumber = document.getElementById('siteNumber').value;
+    const bdNumber = document.getElementById('bdNumber').value;
+
+    console.log('Site Number:', siteNumber);
+    console.log('BD Number:', bdNumber);
+
+
+
+
+    
+
+    const seccontainer = document.getElementById('servicesAA');
+    const services = document.getElementById('services');
+
+
+    var submitb = document.getElementById('submitButton');
+
+
+
+
+
+
+
+
+
+
+if (siteNumber.trim() < 2 ||bdNumber.trim() <2 ) {
+    site_edit.style.display = "block";
+    setTimeout(() => {
+        site_edit.style.display = "none";
+    }, 3000);
+}
+
+else{
+    submitb.style.display="none";
+    data_edit.style.display = "block";
+    setTimeout(() => {
+        data_edit.style.display = "none";
+    }, 2000);
+    setTimeout(() => {
+     seccontainer.style.display = "none";
+    services.style.display = "block";
+
+    
+
+var cretaButtonScroll = document.getElementById('cretaButtonScroll');
+
+for (var n = 1; n <= siteNumber; n++) {
+    var div = cretaButtonScroll.appendChild(document.createElement('div'));
+    div.id = 'ButtonScroll' + n;
+    div.classList = 'options_box';
+    div.addEventListener('click', (function (siteNum) {
+        return function () {
+            scrollToSection(siteNum);
+        };
+    })(n));
+
+    cretaButtonScrollFUNCTION(div.id, n, bdNumber);
+}
+
+
+
+
+var divP = document.getElementById('div-container');
+
+for(var n=1; n<=siteNumber; n++){
+    var div = divP.appendChild(document.createElement('div'));
+    div.id = 'selectors_container'+n; 
+    div.style.height="100%"
+    div.classList='bg_select_show';  
+
+    createSelectors(div.id, n,bdNumber);
+
+}
+
+}, 2000);
+
+var next_to_project_result_btn =document.getElementById('next_to_project_result_btn');
+next_to_project_result_btn.addEventListener("click" ,(event)=>{
+
+    var header_remove = document.getElementById("header_id");
+    header_remove.classList.add('active');
+     
+    if(next_to_project_result_btn){
+        seccontainer.style.display = "none";
+        services.style.display = "none";
+
+        result_dash.style.display = "flex";
+
+        //button_bar_info.style.display = "flex";
+        //container_result_dash.style.display = "flex";
+
+        
+
+    }
+})
+
+// ------------------button bar --------------------------------
+
+        var g= document.getElementById("g");
+        g.addEventListener('click', () => affichage());
+
+
+
+        
+        
+         function menu_dashbaord_sitesFUNCTION(containerId, s,) {
+         var container = document.getElementById(containerId);
+         var titleButton = document.createElement('h2');
+         titleButton.innerHTML = '<span>- ' +s+ ' -</span>';
+         container.appendChild(titleButton);
+         console.log("menu_dashbaord_sitesFUNCTION is opened");}
+
+
+
+}
+
+
+
+function scrollToSection(n) {
+    const selectors_container = `selectors_container${n}`;
+    const section = document.getElementById(selectors_container);
+
+    if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+    }
+}
+
+
+
+
+function cretaButtonScrollFUNCTION(containerId, s) {
+    var container = document.getElementById(containerId);
+
+    var titleButton = document.createElement('h2');
+    titleButton.innerHTML = 'LOCATION <span>- ' + s + ' -</span>';
+    container.appendChild(titleButton);
+
+}
+
+
+
+
+
+        // --------------------------------------------------------------------------------------------
+
+
+        
+
+        function createSelectors(containerId, s, d) {
+            // Get the container element by its ID
+            var container = document.getElementById(containerId);
+
+             var ligne = document.createElement('div');
+             ligne.classList ='ligne';  
+             container.appendChild(ligne);
+
+             var title = document.createElement('div');
+             title.classList ='title'; 
+             title.innerHTML= "<h1>LOCATION <span>-"+s+"-</span></h1>"; 
+             container.appendChild(title);
+
+
+            // Get the container element by its ID selectsite
+            var selectsite = document.createElement('div');
+            selectsite.classList ='bg_select_show_site';  
+            container.appendChild(selectsite);
+
+
+            var selectS = document.createElement('select');
+            selectS.id = 'siteSelector' + s;
+            selectS.innerHTML = "<option disabled selected>Select Location -"+s+"-</option>"; 
+            populateSiteSelector(selectS.id);
+            selectsite.appendChild(selectS);
+
+            selectS.addEventListener("change", (event) => {
+            const selectedsite = selectS.options[selectS.selectedIndex];
+            sites[s-1] = {
+                siteName : selectedsite.text,
+                siteId : selectedsite.value
+            };
+            console.log(sites);
+            
+                populatebdSelector(s,d);
+
+             
+        });
+
+        for(var i = 1; i<=d ; i++){
+                 createBdSelectors(containerId,s,i);
+             }
+        }
+
+        function createBdSelectors(containerId,s,d){
+            var container = document.getElementById(containerId);
+            // Get the container element by its ID selectsite
+            var selectdatabase = document.createElement('div');
+            selectdatabase.classList ='bg_select_show_database';  
+            container.appendChild(selectdatabase);
+
+            var bdSelect = document.createElement('select');
+            bdSelect.id = 'bdSelector' + s + d;
+            bdSelect.innerHTML = "<option disabled selected>Select database -"+d+"- of location -"+s+"- </option>"; 
+            selectdatabase.appendChild(bdSelect);
+            console.log(bdSelect.id);
+
+
+            // create the inputs
+
+            var bg_inputs_show = document.createElement('div');
+            bg_inputs_show.classList ='bg_inputs_show';  
+            container.appendChild(bg_inputs_show);
+
+            var form_box_data_location_inputs = document.createElement('div');
+            form_box_data_location_inputs.classList ='form-box data_location_inputs';  
+            bg_inputs_show.appendChild(form_box_data_location_inputs);
+
+            for(var k = 1; k <= 12 ; k++){
+
+                var input_box_animation_project_page = document.createElement('div');
+                input_box_animation_project_page.classList ='input-box animation project_page';  
+                form_box_data_location_inputs.appendChild(input_box_animation_project_page);
+                
+                                    var input = document.createElement('input');
+                                    var label = document.createElement('label');
+
+                                    input.id = 'month' + s + d + k;
+                                    input.type="number";
+                                    input.value = "";
+                                    input.required = true;
+                                    label.innerHTML = monthNames["month"+k]; 
+                                    input_box_animation_project_page.appendChild(input);
+                                    input_box_animation_project_page.appendChild(label);
+                                }
+
+
+
+
+
+
+            bdSelect.addEventListener ("change", (event) => {
+                    console.log(bdSelect.id);
+                    const selectedbd = bdSelect.options[bdSelect.selectedIndex];
+                    siteBd[s-1][d-1] = {
+                        bdName : selectedbd.text,
+                        bdId : selectedbd.value
+                    };
+
+                    auth.onAuthStateChanged(async(user) => {
+                        if (user) {        
+                            const userId = user.uid;
+                            const userRef = doc(db, collectionName, userId);
+                            const siteDataRef = collection(userRef, "sites");
+                            const bdData = doc(db, collectionName, userId, "sites", sites[s-1]["siteId"], bdCollectionName, selectedbd.value);
+                            getDoc(bdData).then((docSnapshot) => {
+                            const data = docSnapshot.data();
+                            for(var l = 1; l <= 12 ; l++){
+                                var input = document.getElementById('month'+s+d+l);
+                                var month = 'month'+l;
+                                input.value = data[month];
+                                monthData[s-1][d-1][l-1] = data[month];                             
+                            };
+
+                var h = 0;
+                var finish = true;
+                while(h<siteNumber && finish){
+                    var k = 0;
+                    while(k<bdNumber && finish){
+                    if(monthData[h][k][11] == null){ 
+                        finish = false;
+                        console.log(finish);
+                        }
+                    k++;
+                }
+                h++;
+                }
+
+                var finishSite = true;
+                k = 0;
+                    while(k<bdNumber && finishSite){
+                    if(monthData[s-1][k][11] == null){ 
+                        finishSite = false;
+                        }
+                    k++;
+                }
+                
+
+
+                if (finish) {
+                    var btnCollection = document.getElementById("g");
+                    if(btnCollection){
+                        btnCollection.classList.add("enable");
+                        console.log('Button next is added');
+                    }
+                    
+                }
+
+
+                if(finishSite){
+                  
+                    var box = document.getElementById("ButtonScroll" + s);
+                    if (box)  {
+                        box.classList.add("actv");
+                        console.log('Border added: .2rem solid var(--bg-color) for ' + s);
+
+
+                    } else {
+                        console.error('Element with id "ButtonScroll' + s + '" not found');
+                    }
+                } 
+          
+                        });
+                };
+                });        
+            });
+
+        };
+
+        // Function to populate the selector with sites from Firestore
+        function populateSiteSelector(siteSelectorId) {
+            auth.onAuthStateChanged(async(user) => {
+                if (user) {
+                    const userId = user.uid;
+                    const userRef = doc(db, collectionName, userId);
+                    const siteDataRef = collection(userRef, "sites");
+                    const querySnapshot = await getDocs(siteDataRef);
+                    querySnapshot.forEach((doc) => {
+                        const option = document.createElement("option");
+                        option.value = doc.id;
+                        option.text = doc.data().Name;
+                        const siteSelector = document.getElementById(siteSelectorId);
+                        siteSelector.appendChild(option);
+                    });
+                }
+            });
+        }
+
+    
+
+        function populatebdSelector(s, d){
+            
+                auth.onAuthStateChanged(async (user) => {
+                if(user){
+                    var options = [];
+                    var bdSelector = document.getElementById('bdSelector'+s+1);
+                    bdSelector.innerHTML = "<option disabled selected>Select</option>"; 
+                    const userId = user.uid;
+                    const userRef = doc(db, collectionName, userId);
+                    const bdDataRef = collection(userRef, "sites",sites[s-1]["siteId"],bdCollectionName);
+                    const querySnapshot = await getDocs(bdDataRef);
+                    var j = 0;
+                    querySnapshot.forEach((doc) => {
+                        const option = document.createElement("option");
+                        option.value = doc.id;
+                        option.text = doc.data().Name;
+                        console.log(doc.data().Name+'   ' + j+ '  '+ bdSelector.id);
+                        bdSelector.appendChild(option);
+                         options[j] = {value: doc.id , text : doc.data().Name };
+                        j++;
+                    });
+                    for(var i = 2; i<=d ; i++){
+                        var bdSelector = document.getElementById('bdSelector'+s+i);
+                        bdSelector.innerHTML = "<option disabled selected>Select</option>";
+                        for (var k = 0; k < options.length; k++) {
+                            const option = document.createElement("option");
+                            option.value = options[k]["value"];
+                            option.text = options[k]["text"];
+                            bdSelector.appendChild(option);   
+                        }
+                    }
+
+
+                }
+            });
+        }
+
+   
+
+
+
+    var monthNames = {month1:"January",month2:"February",month3:"March",month4:"April",month5:"May",month6:"June",month7:"July",month8:"August",month9:"September",month10:"October",month11:"November",month12:"December"};
+        var sites = [siteNumber];
+        var siteBd = [siteNumber];
+        var monthData = [siteNumber];
+        var mensualSum = [];
+        var moyen = [];
+        var somSaison = [];
+        var somMoyAnnual = [];
+        var somMoyAnnualList = [];
+        for (var i = 0; i < siteNumber; i++) {
+            siteBd[i] = [];
+            mensualSum[i] = [];
+            moyen[i] = [];
+            monthData[i] = [bdNumber];
+            somSaison[i] = [];
+            for (var j = 0; j < bdNumber; j++) {
+            monthData[i][j] = [12];
+            somSaison[i][j] = [];
+            }
+        }
+        var pessimisteIndex =[];
+        var optemisteIndex = [];
+        
+        const monthName = [
+                "January", "February", "March", "April", "May", "June",
+                "July", "August", "September", "October", "November", "December"
+            ];
+                    
+        var colors = ['blue', 'red', 'yellow', 'green', 'orange', 'purple'];
+        var saisons = ['Hiver', 'Printemps', 'été', 'Automne'];
+
+
+// -----------------------------------------table et graph ----------------------------------
+
+
+
+
+
+
+
+
+
+function affichage(){
+    sites.forEach(function(site, index){
+        createTableAffichage(index+1,bdNumber);
+    })
+}
+
+
+function createTableAffichage(s,d,n) {
+
+        var container = document.createElement('div');
+        container.id = 'site-container'+s;
+         //ligne
+        var ligne = document.createElement('div');        
+        ligne.classList ='ligne';  
+        container.appendChild(ligne);
+
+         //title table 1 pour l'affichage des donnes pour chaque site 
+         var title1 = document.createElement('h1');
+         title1.classList ='title';  
+         title1.innerHTML ="Monthly DNI data for <span>"+sites[s-1]["siteName"]+"</span>";
+         container.appendChild(title1);
+
+          //sub-title table 1 pour l'affichage des donnes pour chaque site 
+         var subtitle1 = document.createElement('p');
+         subtitle1.classList ='title';  
+         subtitle1.innerHTML ="This table represents the monthly data of DNI, for <span>"+sites[s-1]["siteName"]+"</span>. From various databases";
+         container.appendChild(subtitle1);
+         
+         var table_bg = document.createElement('div');
+         table_bg.classList='table_bg'
+
+        var table = document.createElement('table');
+        table.style = "width:100%";
+        var tbody = document.createElement('tbody');
+        var tr = document.createElement('tr');
+        var td = document.createElement('td');
+        td.textContent = "Site Name";
+        tr.appendChild(td);
+        td = document.createElement('td');
+        td.textContent = "Database Name";
+        tr.appendChild(td);
+        monthName.forEach(function (month) {
+            var td = document.createElement('td');
+            td.textContent = month;
+            tr.appendChild(td);
+        });
+        tbody.appendChild(tr);
+        tr = document.createElement('tr');
+        td = document.createElement('td');
+        td.textContent = sites[s-1]["siteName"];
+        td.rowSpan = d;
+        tr.appendChild(td);
+        for (var i = 0; i < d; i++){
+            if (i > 0) tr = document.createElement('tr');
+            var td = document.createElement('td');
+            td.textContent = siteBd[s-1][i]['bdName'];
+            tr.appendChild(td);
+            for(var j = 0; j < 12; j++){
+                var tdcell = document.createElement('td');
+                tdcell.textContent = monthData[s-1][i][j];
+                tr.appendChild(tdcell);
+            }
+            tbody.appendChild(tr);
+        }
+        table.appendChild(tbody);
+
+        table_bg.appendChild(table);
+        container.appendChild(table_bg);
+
+        container.appendChild(document.createElement("br"));
+        var secContainer = document.getElementById('display-container');
+        secContainer.appendChild(container);
+        createLineChart(container.id,s);
+        createTableSommeAnnuel(container.id,s,d,n);
+
+
+        var menu_dashbaord_sites = document.getElementById('menu_dashbaord_sites');
+        
+        var div = menu_dashbaord_sites.appendChild(document.createElement('div'));
+        div.id = 'menu_dashbaord_sitesScroll' + s;
+        div.classList = 'options_box_Button';
+        
+        div.addEventListener('click', (function (s) {
+
+        return function () {
+            scrollToSection1(s);
+            console.log("scrollToSection1 called & s="+s);
+        };
+        })(s));
+
+        var titleButton = div.appendChild(document.createElement('h2'));
+        titleButton.innerHTML = sites[s-1]["siteName"];
+        div.appendChild(titleButton);
+    }
+
+
+
+
+    function scrollToSection1(s) {
+    const site_container = `site-container${s}`;
+    const div_result_site = document.getElementById(site_container);
+
+    if (div_result_site) {
+        div_result_site.scrollIntoView({behavior: "smooth"});
+        console.log("scrollToSection1 oppened"+site_container);
+    }
+}
+
+
+
+    function createTableSommeAnnuel(containerId,s,d,n) {
+        // Append the table to the container
+        var tableContainer = document.getElementById(containerId);
+         //title table 2 pour l'affichage des donnes pour chaque site 
+         var title3 = document.createElement('h1');
+         title3.classList ='title';  
+         title3.innerHTML ="Annual sum of DNI for <span>"+sites[s-1]["siteName"]+"</span>";
+         tableContainer.appendChild(title3);
+
+          //sub-title table é pour l'affichage des donnes pour chaque site 
+         var subtitle3 = document.createElement('p');
+         subtitle3.classList ='title';  
+         subtitle3.innerHTML ="This table represents the annual sum of DNI, for <span>"+sites[s-1]["siteName"]+"</span>. From various databases";
+         tableContainer.appendChild(subtitle3);
+
+        
+        var table = document.createElement('table');
+        table.style = "width:50%";
+        var tbody = document.createElement('tbody');
+        var tr = document.createElement('tr');
+        var td = document.createElement('td');
+        td.textContent = " ";
+        tr.appendChild(td);
+        for (var i = 0; i < d; i++){
+            td = document.createElement('td');
+            td.textContent = siteBd[s-1][i]['bdName'];
+            tr.appendChild(td);
+        }
+        tbody.appendChild(tr);
+
+        tr = document.createElement('tr');
+        td = document.createElement('td');
+        td.textContent = "Annual sum of DNI (kWh/m2/an)";
+        tr.appendChild(td);
+        var moy = 0;
+        for (var i = 0; i < d; i++){
+            td = document.createElement('td');
+            var sum = monthData[s-1][i].reduce((accumulator, currentValue) => accumulator + parseInt(currentValue), 0)
+            mensualSum[s-1][i] = sum;
+            td.textContent = sum;
+            moy = moy +sum;
+            tr.appendChild(td);
+        }
+        somMoyAnnual[s-1] = moy/d;
+
+        somMoyAnnualList[s-1] = {moyen: moy/d, siteName: sites[s-1]['siteName'], siteId: sites[s-1]['siteId'] };
+
+
+        tbody.appendChild(tr);  
+        table.appendChild(tbody);
+
+
+        tableContainer.appendChild(table);
+        tableContainer.appendChild(document.createElement("br"));
+        createTableValeurExtremale(containerId,s,d,n);
+    }
+
+    function createTableValeurExtremale(containerId,s,d,n) {
+                // Append the table to the container
+                var tableContainer = document.getElementById(containerId);
+                //title table 4 pour l'affichage des donnes pour chaque site 
+        var title4 = document.createElement('h1');
+         title4.classList ='title';  
+         title4.innerHTML ="The extreme value of DNI for <span>"+sites[s-1]["siteName"]+"</span>";
+         tableContainer.appendChild(title4);
+
+          //sub-title table é pour l'affichage des donnes pour chaque site 
+         var subtitle4 = document.createElement('p');
+         subtitle4.classList ='title';  
+         subtitle4.innerHTML ="This table represents the extreme value of DNI (Max & Min) And the month that get this value, for <span>"+sites[s-1]["siteName"]+"</span>. From various databases";
+         tableContainer.appendChild(subtitle4);
+
+        var table = document.createElement('table');
+        table.style = "width:50%";
+        var tbody = document.createElement('tbody');
+        var tr = document.createElement('tr');
+        var td = document.createElement('td');
+        td.textContent = "The extreme value of DNI (kWh/m2)";
+        tr.appendChild(td);
+        for (var i = 0; i < d; i++){
+            td = document.createElement('td');
+            td.textContent = siteBd[s-1][i]['bdName'];
+            tr.appendChild(td);
+        }
+        tbody.appendChild(tr);
+        var td ;
+        var tr = [];
+        td = document.createElement('td');
+        td.textContent = "DNI - max value";
+        tr[0]= document.createElement('tr');
+        tr[0].appendChild(td);
+
+        td = document.createElement('td');
+        td.textContent = "month for the max value";
+        tr[1]= document.createElement('tr');
+        tr[1].appendChild(td);
+
+        td = document.createElement('td');
+        td.textContent = "DNI - min value";
+        tr[2]= document.createElement('tr');
+        tr[2].appendChild(td);
+
+        td = document.createElement('td');
+        td.textContent = "month for the min value";
+        tr[3]= document.createElement('tr');
+        tr[3].appendChild(td);
+        for (var i = 0; i < d; i++){
+            var tdCell = document.createElement('td');
+            var values = monthData[s-1][i];
+            var max = Math.max(...values);
+            tdCell.textContent = max;
+            tr[0].appendChild(tdCell);
+
+            tdCell = document.createElement('td');
+            tdCell.textContent = monthName[values.indexOf(max.toString())];
+            tr[1].appendChild(tdCell);
+
+            tdCell = document.createElement('td');
+            var min = Math.min(...values);
+            tdCell.textContent = min;
+            tr[2].appendChild(tdCell);
+
+            tdCell = document.createElement('td');
+            tdCell.textContent = monthName[values.indexOf(min.toString())];
+            tr[3].appendChild(tdCell);
+        }
+        tr.forEach(function (tr){
+            tbody.appendChild(tr);
+        });
+        table.appendChild(tbody);
+
+
+        tableContainer.appendChild(table);
+        tableContainer.appendChild(document.createElement("br"));
+        createTableSaisoniere(containerId,s,d,n);
+
+    }
+
+    function createTableSaisoniere(containerId,s,d,n) {
+                // Append the table to the container
+                var tableContainer = document.getElementById(containerId);
+        //title table 5pour l'affichage des donnes pour chaque site 
+        var title5 = document.createElement('h1');
+         title5.classList ='title';  
+         title5.innerHTML ="The seasonal values of DNI for <span>"+sites[s-1]["siteName"]+"</span>";
+         tableContainer.appendChild(title5);
+
+          //sub-title table é pour l'affichage des donnes pour chaque site 
+         var subtitle5 = document.createElement('p');
+         subtitle5.classList ='title';  
+         subtitle5.innerHTML ="This table represents the seasonal values of DNI (Summer & spring & autunm & winter), for <span>"+sites[s-1]["siteName"]+"</span>. From various databases";
+         tableContainer.appendChild(subtitle5);
+
+        var table = document.createElement('table');
+        table.style = "width:50%";
+        var tbody = document.createElement('tbody');
+        var tr = document.createElement('tr');
+        var td = document.createElement('td');
+        td.textContent = "seasonal sum (kWh/m2/saison)";
+        tr.appendChild(td);
+        for (var i = 0; i < d; i++){
+            td = document.createElement('td');
+            td.textContent = siteBd[s-1][i]['bdName'];
+            tr.appendChild(td);
+        }
+        tbody.appendChild(tr);
+
+        var td ;
+        var tr = [];
+        td = document.createElement('td');
+        td.textContent = "DNI for winter";
+        tr[0]= document.createElement('tr');
+        tr[0].appendChild(td);
+
+        td = document.createElement('td');
+        td.textContent = "DNI for spring";
+        tr[1]= document.createElement('tr');
+        tr[1].appendChild(td);
+
+        td = document.createElement('td');
+        td.textContent = "DNI for summer";
+        tr[2]= document.createElement('tr');
+        tr[2].appendChild(td);
+
+        td = document.createElement('td');
+        td.textContent = "DNI for autunm";
+        tr[3]= document.createElement('tr');
+        tr[3].appendChild(td);
+        for (var i = 0; i < d; i++){
+            var tdCell = document.createElement('td');
+            var values = monthData[s-1][i];
+            tdCell.textContent = parseInt(values[0])+parseInt(values[1])+parseInt(values[2]);
+            tr[0].appendChild(tdCell);
+            somSaison[s-1][i][0] = parseInt(values[0])+parseInt(values[1])+parseInt(values[2]);
+
+            tdCell = document.createElement('td');
+            tdCell.textContent = parseInt(values[3])+parseInt(values[4])+parseInt(values[5]);
+            tr[1].appendChild(tdCell);
+            somSaison[s-1][i][1]= parseInt(values[3])+parseInt(values[4])+parseInt(values[5]);
+
+            tdCell = document.createElement('td');
+            tdCell.textContent = parseInt(values[6])+parseInt(values[7])+parseInt(values[8]);
+            tr[2].appendChild(tdCell);
+            somSaison[s-1][i][2] = parseInt(values[6])+parseInt(values[7])+parseInt(values[8]);
+
+            tdCell = document.createElement('td');
+            tdCell.textContent = parseInt(values[9])+parseInt(values[10])+parseInt(values[11]);
+            tr[3].appendChild(tdCell);
+            somSaison[s-1][i][3] = parseInt(values[9])+parseInt(values[10])+parseInt(values[11]);
+
+        }
+        tr.forEach(function (tr){
+            tbody.appendChild(tr);
+        });
+        table.appendChild(tbody);
+
+
+        tableContainer.appendChild(table);
+        tableContainer.appendChild(document.createElement("br"));
+        createLineChartSaison(containerId,s);
+        createTableOptimiste(containerId,s,d,n);
+
+    }
+
+    function createTableOptimiste(containerId,s,d,n) {
+
+        
+        var tableOptimiste_bg = document.createElement('div');
+        tableOptimiste_bg.classList='table_bg';
+
+        var table = document.createElement('table');
+        table.style = "width:100%";
+        var tbody = document.createElement('tbody');
+        var tr = document.createElement('tr');
+        var td = document.createElement('td');
+        td.textContent = "Optimistic scenariio (High DNI)";
+        tr.appendChild(td);
+        monthName.forEach(function (month) {
+            var td = document.createElement('td');
+            td.textContent = month;
+            tr.appendChild(td);
+        }); 
+
+        tbody.appendChild(tr);
+        tr = document.createElement('tr');
+        td = document.createElement('td');
+        td.textContent = 'DNI (kWh/m2/mois)';
+        tr.appendChild(td);
+        var values = mensualSum[s-1];
+        var max = Math.max(...values);
+        var maxIndex = values.indexOf(max);
+        optemisteIndex[s-1] = maxIndex;
+        monthData[s-1][maxIndex].forEach(function(data){
+            td = document.createElement('td');
+            td.textContent = data;
+            tr.appendChild(td);
+        });
+        tbody.appendChild(tr);
+        table.appendChild(tbody);
+
+        var tableContainer = document.getElementById(containerId);
+        tableOptimiste_bg.appendChild(table);
+        tableContainer.appendChild(tableOptimiste_bg);
+
+        tableContainer.appendChild(document.createElement("br"));
+        createTablePessimiste(containerId,s,d,n);
+    }
+
+    function createTablePessimiste(containerId,s,d,n) {
+         var Pessimiste_bg = document.createElement('div');
+        Pessimiste_bg.classList="table_bg";
+
+        var table = document.createElement('table');
+        table.style = "width:100%";
+        var tbody = document.createElement('tbody');
+        var tr = document.createElement('tr');
+        var td = document.createElement('td');
+        td.textContent = "Pessimistic scenario (Weak DNI)";
+        tr.appendChild(td);
+        monthName.forEach(function (month) {
+            var td = document.createElement('td');
+            td.textContent = month;
+            tr.appendChild(td);
+        });
+        tbody.appendChild(tr);
+        tr = document.createElement('tr');
+        td = document.createElement('td');
+        td.textContent = 'DNI (kWh/m2/mois)';
+        tr.appendChild(td);
+        var values = mensualSum[s-1];
+        var min = Math.min(...values);
+        var minIndex = values.indexOf(min);
+        pessimisteIndex[s-1] = minIndex;
+        monthData[s-1][minIndex].forEach(function(data){
+            td = document.createElement('td');
+            td.textContent = data;
+            tr.appendChild(td);
+        });
+        tbody.appendChild(tr);
+        table.appendChild(tbody);
+        var tableContainer = document.getElementById(containerId);
+        Pessimiste_bg.appendChild(table);
+        tableContainer.appendChild(Pessimiste_bg);
+        tableContainer.appendChild(document.createElement("br"));
+        createTableMoyen(containerId,s,d,n);
+    }
+
+    function createTableMoyen(containerId,s,d,n) {
+        var Moyen_bg =document.createElement('table'); 
+        Moyen_bg.classList='table_bg';
+
+        var table = document.createElement('table');
+        table.style = "width:100%";
+        var tbody = document.createElement('tbody');
+        var tr = document.createElement('tr');
+        var td = document.createElement('td');
+        td.textContent = "Scénario moyen (arithmétique)";
+        tr.appendChild(td);
+        monthName.forEach(function (month) {
+            var td = document.createElement('td');
+            td.textContent = month;
+            tr.appendChild(td);
+        });
+        tbody.appendChild(tr);
+        tr = document.createElement('tr');
+        td = document.createElement('td');
+        td.textContent = 'DNI (kWh/m2/mois)';
+        tr.appendChild(td);
+        for(var i = 0; i < 12; i++){
+            var sum = 0;
+            for(var j=0; j < d; j++){
+                sum = sum + parseInt(monthData[s-1][j][i]);
+            }
+            var moy = sum / d;
+            moyen[s-1][i]=moy;
+            td = document.createElement('td');
+            td.textContent = moy.toFixed(2);
+            tr.appendChild(td);
+        }
+        console.log(moyen[s-1]);
+        tbody.appendChild(tr);
+        table.appendChild(tbody);
+        var tableContainer = document.getElementById(containerId);
+        Moyen_bg.appendChild(table);
+        tableContainer.appendChild(Moyen_bg);
+        tableContainer.appendChild(document.createElement("br"));
+        createLineChartScenarios(containerId,s);
+
+        if(s==siteNumber){ 
+                console.log("createTableAffichageComp is in x= "+s);
+                console.log("site number="+siteNumber);
+
+                createTableAffichageComp();
+        } else{
+
+                console.log("createTableAffichageComp is OUT x="+s);
+                console.log("site number ="+siteNumber);
+        }
+
+    }
+
+    function createLineChart(containerId,s) {
+
+        var canvas_bg = document.createElement('div');
+        canvas_bg.classList='canvas_bg';
+
+        var canvas = document.createElement('canvas');
+        var dataSets = [] ;
+        siteBd[s-1].forEach(function(e,index){
+            dataSets.push({label: e['bdName'],
+                data: monthData[s-1][index],
+                borderColor: colors[index],
+                borderWidth: 2,
+                fill: false });
+        });
+        const data = {
+            labels: monthName,
+            datasets: dataSets
+        };
+        const options = {scales: {y: {beginAtZero: true}}};
+
+        // Get the canvas element
+        const ctx = canvas.getContext('2d');
+
+        // Create a line chart
+        const myChart = new Chart(ctx, {
+            type: 'line',
+            data: data,
+            options: options
+        });
+
+        var Container = document.getElementById(containerId);
+
+
+         //title table 1 pour l'affichage des donnes pour chaque site 
+         var title22 = document.createElement('h1');
+         title22.classList ='title';  
+         title22.innerHTML ="Chart monthly DNI data for <span>"+sites[s-1]["siteName"]+"</span>";
+         Container.appendChild(title22);
+
+          //sub-title table 1 pour l'affichage des donnes pour chaque site 
+         var subtitle2 = document.createElement('p');
+         subtitle2.classList ='title';  
+         subtitle2.innerHTML ="This Chart represents the monthly data of DNI, for <span>"+sites[s-1]["siteName"]+"</span>. From various databases";
+         canvas_bg.appendChild(canvas);
+         Container.appendChild(subtitle2);
+         Container.appendChild(canvas_bg);
+        Container.appendChild(document.createElement("br"));
+         
+    }
+
+    function createLineChartScenarios(containerId,s) {
+
+        var ChartScenarios_bg = document.createElement('div');
+        ChartScenarios_bg.classList='canvas_bg';
+
+        var canvas = document.createElement('canvas'); 
+        var datas = [];
+        datas.push(monthData[s-1][optemisteIndex[s-1]]);
+        datas.push(monthData[s-1][pessimisteIndex[s-1]]);
+        datas.push(moyen[s-1]);
+        var dataSets = [] ;
+        var scenarios = ['Optemiste','Pessimiste', 'Moyen'];
+        scenarios.forEach(function(e,index){
+            dataSets.push({label: e,
+                data: datas[index],
+                borderColor: colors[index],
+                borderWidth: 2,
+                fill: false });
+        });
+        const data = {
+            labels: monthName,
+            datasets: dataSets
+        };
+        const options = {scales: {y: {beginAtZero: true}}};
+
+        // Get the canvas element
+        const ctx = canvas.getContext('2d');
+
+        // Create a line chart
+        const myChart = new Chart(ctx, {
+            type: 'line',
+            data: data,
+            options: options
+        });
+
+        var Container = document.getElementById(containerId);
+        ChartScenarios_bg.appendChild(canvas);
+        Container.appendChild(ChartScenarios_bg);
+        Container.appendChild(document.createElement("br"));
+
+    }
+
+    function createLineChartSaison(containerId,s) {
+
+        var LineChartSaison_bg = document.createElement('div');
+        LineChartSaison_bg.classList='canvas_bg';
+
+        var Container = document.getElementById(containerId);
+
+        //title table 5pour l'affichage des donnes pour chaque site 
+        var title6 = document.createElement('h1');
+         title6.classList ='title';  
+         title6.innerHTML ="chart of seasonal values of DNI for <span>"+sites[s-1]["siteName"]+"</span>";
+         Container.appendChild(title6);
+
+
+        var canvas = document.createElement('canvas'); 
+        var dataSets = [];
+
+        siteBd[s-1].forEach(function(e,index){
+            dataSets.push({label: e['bdName'],
+                data: somSaison[s-1][index],
+                borderColor: colors[index],
+                borderWidth: 2,
+                fill: false });
+        });
+        const data = {
+            labels: saisons,
+            datasets: dataSets
+        };
+        const options = {scales: {y: {beginAtZero: true}}};
+
+        // Get the canvas element
+        const ctx = canvas.getContext('2d');
+
+        // Create a line chart
+        const myChart = new Chart(ctx, {
+            type: 'bar',
+            data: data,
+            options: options
+        });
+        LineChartSaison_bg.appendChild(canvas);
+        Container.appendChild(LineChartSaison_bg);
+        Container.appendChild(document.createElement("br"));
+
+
+        //title table 5pour l'affichage des donnes pour chaque site 
+         var title8 = document.createElement('h1');
+         title8.classList ='title';  
+         title8.innerHTML ="The table & chart of pessimistic and optimistic and average scenarios of DNI for <span>"+sites[s-1]["siteName"]+"</span>";
+         Container.appendChild(title8);
+
+          //sub-title table é pour l'affichage des donnes pour chaque site 
+         var subtitle8 = document.createElement('p');
+         subtitle8.classList ='title';  
+         subtitle8.innerHTML ="This table represents pessimistic and optimistic and average scenarios of DNI, for <span>"+sites[s-1]["siteName"]+"</span>. From various databases";
+         Container.appendChild(subtitle8);
+
+         
+
+    }
+    
+    function createTableAffichageComp() {
+
+        var createTableAffichageComp_bg = document.createElement('div');
+        createTableAffichageComp_bg.classList='table_bg';
+
+
+        var secContainer = document.getElementById('display-container');
+        //sub-title table é pour l'affichage des donnes pour chaque site 
+        var subtitle11 = document.createElement('div');
+         subtitle11.classList ='ligne';  
+         secContainer.appendChild(subtitle11);
+
+        //sub-title table é pour l'affichage des donnes pour chaque site 
+         var subtitle9 = document.createElement('h1');
+         subtitle9.classList ='title';  
+         subtitle9.innerHTML ="<span>THE COMPARISON</span>";
+         secContainer.appendChild(subtitle9);
+
+            //sub-title table é pour l'affichage des donnes pour chaque site 
+        var subtitle10 = document.createElement('P');
+        subtitle10.classList ='title';  
+        subtitle10.innerHTML ="This table contains all the data of this project";
+        secContainer.appendChild(subtitle10);
+
+
+        var container = document.createElement('div');
+        container.id = 'comparaison-container';
+        
+        var comparison_scroll_button = document.getElementById('comparison_scroll_button');
+        comparison_scroll_button.addEventListener('click',()=>{
+            
+            const  comparaison_container=`comparaison-container`;
+            const comparaison_container_scr = document.getElementById(comparaison_container);
+          if(comparaison_container_scr){
+            comparaison_container_scr.scrollIntoView();
+          }
+
+        });
+
+        var Ranking_scroll_button = document.getElementById('Ranking_scroll_button');
+        Ranking_scroll_button.addEventListener('click',()=>{
+            
+            const  Ranking_container=`rankiing_sites`;
+            const Ranking_container_scr = document.getElementById(Ranking_container);
+          if(Ranking_container_scr){
+            Ranking_container_scr.scrollIntoView();
+          }
+
+        });
+        var table = document.createElement('table');
+        table.style = "width:100%";
+        var tbody = document.createElement('tbody');
+        var tr = document.createElement('tr');
+        var td = document.createElement('td');
+        td.textContent = "The monthly bulk sum";
+        tr.appendChild(td);
+        monthName.forEach(function (month) {
+            var td = document.createElement('td');
+            td.textContent = month;
+            tr.appendChild(td);
+        });
+        tbody.appendChild(tr);
+        for(var k=0; k<siteNumber; k++){
+        for (var i = 0; i < bdNumber; i++){
+            tr = document.createElement('tr');
+            td = document.createElement('td');
+            td.textContent = sites[k]['siteName'] +' '+siteBd[k][i]['bdName'];
+            tr.appendChild(td);
+            for(var j = 0; j < 12; j++){
+                var tdcell = document.createElement('td');
+                tdcell.textContent = monthData[k][i][j];
+                tr.appendChild(tdcell);
+            }
+            tbody.appendChild(tr);
+        }
+        }
+        table.appendChild(tbody);
+
+        createTableAffichageComp_bg.appendChild(table);
+        container.appendChild(createTableAffichageComp_bg);
+
+        container.appendChild(document.createElement("br"));
+        var secContainer = document.getElementById('display-container');
+        secContainer.appendChild(container);
+        createTableMensualComp();
+    }
+
+    function createTableMensualComp() {
+        var createTableMensualComp_bg = document.createElement('div');
+        createTableMensualComp_bg.classList='table_bg';
+
+
+
+
+        var container = document.createElement('div');
+        container.id = 'comparaison-container';
+        var table = document.createElement('table');
+        table.style = "width:100%";
+        var tbody = document.createElement('tbody');
+        var tr = document.createElement('tr');
+        var td = document.createElement('td');
+        td.textContent = "The average monthly sum";
+        tr.appendChild(td);
+        monthName.forEach(function (month) {
+            var td = document.createElement('td');
+            td.textContent = month;
+            tr.appendChild(td);
+        });
+        tbody.appendChild(tr);
+        for(var k=0; k<siteNumber; k++){
+            tr = document.createElement('tr');
+            td = document.createElement('td');
+            td.textContent = sites[k]['siteName'] ;
+            tr.appendChild(td);
+            console.log(moyen[k]);
+            for(var j = 0; j < 12; j++){
+                var tdcell = document.createElement('td');
+                tdcell.textContent = moyen[k][j].toFixed(2);
+                tr.appendChild(tdcell);
+            }
+            tbody.appendChild(tr);
+        }
+        table.appendChild(tbody);
+
+        createTableMensualComp_bg.appendChild(table);
+        container.appendChild(createTableMensualComp_bg);
+
+        container.appendChild(document.createElement("br"));
+        var secContainer = document.getElementById('comparaison-container');
+
+        //sub-title table é pour l'affichage des donnes pour chaque site 
+        var createTableMensualComp_bg_Title = document.createElement('p');
+         createTableMensualComp_bg_Title.classList ='title';  
+         createTableMensualComp_bg_Title.innerHTML ="for each location ,we put its own database average";
+         secContainer.appendChild(createTableMensualComp_bg_Title);
+
+        secContainer.appendChild(container);
+        createLineChartComp();
+    }
+
+    function createLineChartComp() {
+        var createLineChartComp_bg = document.createElement('div');
+        createLineChartComp_bg.classList='canvas_bg';
+
+        var canvas = document.createElement('canvas'); 
+        var dataSets = [] ;
+        sites.forEach(function(e,index){
+            dataSets.push({label: e['siteName'],
+                data: moyen[index],
+                borderColor: colors[index],
+                borderWidth: 2,
+                fill: false });
+        });
+        const data = {
+            labels: monthName,
+            datasets: dataSets
+        };
+        const options = {scales: {y: {beginAtZero: true}}};
+
+        // Get the canvas element
+        const ctx = canvas.getContext('2d');
+
+        // Create a line chart
+        const myChart = new Chart(ctx, {
+            type: 'line',
+            data: data,
+            options: options
+        });
+
+        var Container = document.getElementById('comparaison-container');
+
+        createLineChartComp_bg.appendChild(canvas);
+        Container.appendChild(createLineChartComp_bg);
+        Container.appendChild(document.createElement("br"));
+        createTableAnnualComp();
+    }
+
+    function createTableAnnualComp() {
+
+        var createTableAnnualComp_bg = document.createElement('div');
+        createTableAnnualComp_bg.classList='table_bg';
+
+
+        var container = document.createElement('div');
+        container.id = 'comparaison-container';
+        var table = document.createElement('table');
+        table.style = "width:100%";
+        var tbody = document.createElement('tbody');
+        var tr = document.createElement('tr');
+        var td = document.createElement('td');
+        td.textContent = "The annual sum (kWh/m2/an)";
+        tr.appendChild(td);
+        var td = document.createElement('td');
+        td.textContent = "The Average";
+        tr.appendChild(td);
+        tbody.appendChild(tr);
+
+        sites.forEach(function (site,index) {
+            tr = document.createElement('tr');  
+            td = document.createElement('td');
+            td.textContent = site['siteName'] + ' ' +'The annual DNI';
+            tr.appendChild(td);
+            td = document.createElement('td');
+            var moyAnucom = parseFloat(somMoyAnnual[index]);
+            td.textContent = moyAnucom.toFixed(1);
+            tr.appendChild(td);
+            
+        tbody.appendChild(tr);
+        });
+
+        table.appendChild(tbody);
+
+        createTableAnnualComp_bg.appendChild(table);
+        
+        container.appendChild(createTableAnnualComp_bg);
+        container.appendChild(document.createElement("br"));
+        var secContainer = document.getElementById('comparaison-container');
+
+                                //sub-title table é pour l'affichage des donnes pour chaque site 
+        var createTableAnnualComp_Title= document.createElement('p');
+         createTableAnnualComp_Title.classList ='title';  
+         createTableAnnualComp_Title.innerHTML ="The annual DNI value of DNI for each site";
+         secContainer.appendChild(createTableAnnualComp_Title);
+
+        secContainer.appendChild(container);
+        createLineChartAnnuelComp();
+    }
+
+    function createLineChartAnnuelComp() {
+        var createLineChartAnnuelComp_bg = document.createElement('div');
+        createLineChartAnnuelComp_bg.classList='canvas_bg';
+
+        var canvas = document.createElement('canvas'); 
+
+        const names = sites.map(item => item.siteName);
+        const valeurs = somMoyAnnualList.map(item => item.moyen);
+        console.log(names);
+        console.log(valeurs);
+        
+
+
+        // Get the context of the canvas
+        const ctx = canvas.getContext('2d');
+
+        // Create a bar chart
+        const myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: names,
+                datasets: [{
+                    label: 'Moyen Annuel',
+                    data: valeurs,
+                    borderColor: 'rgb(0, 251, 255)', // Border color of bars
+                    borderWidth: 1 // Border width of bars
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+        var Container = document.getElementById('comparaison-container');
+        createLineChartAnnuelComp_bg.appendChild(canvas);
+        Container.appendChild(createLineChartAnnuelComp_bg);
+        Container.appendChild(document.createElement("br"));
+        createTableClassement();
+
+    }
+ 
+    
+    function sortByMoyen(a, b) {
+    return b.moyen - a.moyen;
+    }
+
+    function createTableClassement(){
+
+
+
+
+        var createTableClassement_bg = document.createElement('div');
+        createTableClassement_bg.classList='table_bg';
+
+        var sortedList = somMoyAnnualList.sort(sortByMoyen);
+
+        var table = document.createElement('table');
+        table.style = "width:100%";
+        var tbody = document.createElement('tbody');
+        var tr = document.createElement('tr');
+        var td = document.createElement('td');
+        td.textContent = "Classement";
+        tr.appendChild(td);
+        td = document.createElement('td');
+        td.textContent ="Site";
+        tr.appendChild(td);
+        td = document.createElement('td');
+        td.textContent = "Moyen Annuel";
+        tr.appendChild(td);
+        tbody.appendChild(tr);
+
+        sortedList.forEach(function (site,index) {
+            tr = document.createElement('tr'); 
+            
+            td = document.createElement('td');
+            td.textContent = index+1;
+            tr.appendChild(td);
+
+            td = document.createElement('td');
+            td.textContent = site['siteName'];
+            tr.appendChild(td);
+            
+            td = document.createElement('td');
+            td.textContent = site['moyen'].toFixed(2);
+            tr.appendChild(td);
+            
+        tbody.appendChild(tr);
+        });
+
+        table.appendChild(tbody);
+
+
+        var Container = document.getElementById('comparaison-container');
+
+
+        var createTableClassement_Ligne = document.createElement('div');
+        createTableClassement_Ligne.classList ='ligne';  
+         Container.appendChild(createTableClassement_Ligne);
+
+        //sub-title table é pour l'affichage des donnes pour chaque site 
+         var subtitle_createTableClassement_Ligne= document.createElement('h1');
+         subtitle_createTableClassement_Ligne.classList ='title'; 
+         subtitle_createTableClassement_Ligne.id ='rankiing_sites';   
+         subtitle_createTableClassement_Ligne.innerHTML ="<span>THE RANKING</span>";
+         Container.appendChild(subtitle_createTableClassement_Ligne);
+         Container.appendChild(document.createElement("br"));
+         Container.appendChild(document.createElement("br"));
+
+
+
+        createTableClassement_bg.appendChild(table);
+        Container.appendChild(createTableClassement_bg);
+        Container.appendChild(document.createElement("br"));
+    }
+
+
+
+
+
+}); 
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const PDFbtn = document.getElementById('pdf_btn_dash');
+
+    const overlay= document.getElementById('overlay');
+
+    PDFbtn.addEventListener('click', () => {
+
+        overlay.style.display='flex';
+
+        // No need to check for PDFbtn again, you've already selected it
+        PDFgenerate();
+    });
+});
+
+function PDFgenerate() {
+    // Your HTML content goes here
+    const displayContainer = document.getElementById("display-container");
+    console.log('PDFgenerate function is called ');
+
+    // Options for pdf generation
+    const options = {
+        margin: 0,
+        filename: 'GERA-SSP-project.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+    };
+
+
+    // Generate PDF
+    html2pdf(displayContainer, options)
+        .outputPdf()
+        .then(pdf => {
+            const overlay= document.getElementById('overlay');
+            overlay.style.display='none';
+            console.log('pdf is Generated');  // Corrected the typo in console.log
+        });
+};
+
+       
+    </script>
+    
+
+
+</body>
+</html>
