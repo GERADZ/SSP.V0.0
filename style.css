@@ -828,6 +828,10 @@ cursor: pointer;
     .portfolio-container {
         grid-template-columns: repeat(2, 1fr);
     }
+        .about.solione{
+        display: flex;
+        flex-direction: column;
+    }
 
 
 }
@@ -861,6 +865,10 @@ cursor: pointer;
         right: -4.3vw;
         top: -2.5vw;
     }
+        .about.solione{
+        display: flex;
+        flex-direction: column;
+    }
 
 }
 
@@ -884,6 +892,10 @@ cursor: pointer;
     }
     .about-img img {
         width: 90vw;
+    }
+        .about.solione{
+        display: flex;
+        flex-direction: column;
     }
 
     
