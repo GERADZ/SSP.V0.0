@@ -771,19 +771,21 @@ function cretaButtonScrollFUNCTION(containerId, s) {
         var somSaison = [];
         var somMoyAnnual = [];
         var somMoyAnnualList = [];
+        var optemiste = [siteNumber];
+        var pessemiste = [siteNumber];
         for (var i = 0; i < siteNumber; i++) {
             siteBd[i] = [];
             mensualSum[i] = [];
             moyen[i] = [];
             monthData[i] = [bdNumber];
             somSaison[i] = [];
+            optemiste[i] = [12];
+            pessemiste[i] = [12];
             for (var j = 0; j < bdNumber; j++) {
             monthData[i][j] = [12];
             somSaison[i][j] = [];
             }
         }
-        var pessimisteIndex =[];
-        var optemisteIndex = [];
         
         const monthName = [
                 "January", "February", "March", "April", "May", "June",
@@ -1140,7 +1142,24 @@ function createTableAffichage(s,d,n) {
 
     function createTableOptimiste(containerId,s,d,n) {
 
-        
+        // creer les tables optemiste et pessemiste
+        var max,min;
+        for(var i=0;i<12;i++){
+            max = parseInt(monthData[s-1][0][i]);
+            min = max;
+            for(var j=1; j<bdNumber; j++){
+                if(parseInt(monthData[s-1][j][i]) < min)
+                min = parseInt(monthData[s-1][j][i]);
+                else {
+                    if(parseInt(monthData[s-1][j][i]) > max)
+                        max = parseInt(monthData[s-1][j][i]);
+                    }
+            }
+            optemiste[s-1][i] = max;
+            pessemiste[s-1][i] = min;
+        }
+        console.log(optemiste[s-1]);
+        console.log(pessemiste[s-1]);
         var tableOptimiste_bg = document.createElement('div');
         tableOptimiste_bg.classList='table_bg';
 
@@ -1162,11 +1181,7 @@ function createTableAffichage(s,d,n) {
         td = document.createElement('td');
         td.textContent = 'DNI (kWh/m2/mois)';
         tr.appendChild(td);
-        var values = mensualSum[s-1];
-        var max = Math.max(...values);
-        var maxIndex = values.indexOf(max);
-        optemisteIndex[s-1] = maxIndex;
-        monthData[s-1][maxIndex].forEach(function(data){
+        optemiste[s-1].forEach(function(data){
             td = document.createElement('td');
             td.textContent = data;
             tr.appendChild(td);
@@ -1203,11 +1218,7 @@ function createTableAffichage(s,d,n) {
         td = document.createElement('td');
         td.textContent = 'DNI (kWh/m2/mois)';
         tr.appendChild(td);
-        var values = mensualSum[s-1];
-        var min = Math.min(...values);
-        var minIndex = values.indexOf(min);
-        pessimisteIndex[s-1] = minIndex;
-        monthData[s-1][minIndex].forEach(function(data){
+        pessemiste[s-1].forEach(function(data){
             td = document.createElement('td');
             td.textContent = data;
             tr.appendChild(td);
@@ -1332,8 +1343,8 @@ function createTableAffichage(s,d,n) {
 
         var canvas = document.createElement('canvas'); 
         var datas = [];
-        datas.push(monthData[s-1][optemisteIndex[s-1]]);
-        datas.push(monthData[s-1][pessimisteIndex[s-1]]);
+        datas.push(optemiste[s-1]);
+        datas.push(pessemiste[s-1]);
         datas.push(moyen[s-1]);
         var dataSets = [] ;
         var scenarios = ['Optemiste','Pessimiste', 'Moyen'];
@@ -1645,7 +1656,7 @@ function createTableAffichage(s,d,n) {
         container.appendChild(document.createElement("br"));
         var secContainer = document.getElementById('comparaison-container');
 
-                                //sub-title table é pour l'affichage des donnes pour chaque site 
+          //sub-title table é pour l'affichage des donnes pour chaque site 
         var createTableAnnualComp_Title= document.createElement('p');
          createTableAnnualComp_Title.classList ='title';  
          createTableAnnualComp_Title.innerHTML ="The annual DNI value of DNI for each site";
